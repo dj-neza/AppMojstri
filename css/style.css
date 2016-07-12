@@ -22,3 +22,8 @@
 .dr_datum {
     color: #5bc0de !important; 
 }
+
+.koledar-pacient {
+    height: 500px;
+    width: 500px;
+}
