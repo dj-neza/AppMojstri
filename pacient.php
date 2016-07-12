@@ -9,9 +9,7 @@
         <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-        <script src="js/app.js"></script>
+        
     </head>
 
     <body>
@@ -21,6 +19,12 @@
     	<button type="dropdown">...</button>
     	<p>Izberite termin:</p>
     	<p>Opišite problem:</p>
+    	
+    	
+    	
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
 
     </body>
 

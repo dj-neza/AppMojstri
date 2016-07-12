@@ -3,14 +3,6 @@
     width: 100%;
 }
 
-#pacient {
-    height: 350px;
-}
-
-#noga {
-    margin-top: 25px;
-}
-
 .ozadje {
     background-color: white;
 }
@@ -21,4 +13,36 @@
 
 .dr_datum {
     color: #5bc0de !important; 
+}
+
+.dont-display {
+    display: none;
+}
+
+.odmik {
+    margin-top: 20px;
+}
+
+.zavrni {
+    margin-left: 30px;
+}
+
+#minute {
+    margin-left: 10px;
+}
+
+#pacient {
+    height: 350px;
+}
+
+#noga {
+    margin-top: 25px;
+}
+
+#datum {
+    margin-top: 15px;
+}
+
+#ura {
+    margin-bottom: 15px;
 }
