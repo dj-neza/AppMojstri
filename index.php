@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8"> 
         <title>Dr. Datum</title>
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
 
     <body>
         <div class="container">
           <div class="jumbotron ozadje" align="center">
-            <img src="icon_brainstorm.png" class="img-rounded" width="90" height="90">
+            <img src="stetoskop.png" class="img-rounded" width="120" height="120">
             <h1 class="change-font dr_datum">Dr. Datum</h1>
             <p class="change-font">Naročanje še nikoli ni bilo hitrejše in enostavnejše kot takrat, kadar je na izmeni Dr. Datum!</p>
             <p class="change-font"> Izberi, potrdi, pridi!</p>
@@ -18,18 +18,18 @@
           
           <div class="row">
             <div class="col-lg-6">
-                <a href="http://www.google.com/">
+                <a href="pacient.php">
                     <button type="button" class="btn btn-info gumb" width="100%">
-                        <img src="patient.png" class="img-thumbnail" id="pacient" onclick="preusmeri_pacient()">
-                        <h4>Naroči se!</h4>
+                        <img src="patient.png" class="img-thumbnail" id="pacient">
+                        <h4 class="change-font">Naroči se!</h4>
                     </button>
                 </a>
             </div>
             <div class="col-lg-6">
-                <a href="http://www.google.com/">
-                    <button type="button" class="btn btn-info gumb" width="100%" onclick="preusmeri_zdravnik()">
+                <a href="zdravnik.php">
+                    <button type="button" class="btn btn-info gumb" width="100%">
                         <img src="doctors.png" class="img-thumbnail" id="pacient">
-                        <h4>Preveri naročila!</h4>
+                        <h4 class="change-font">Preveri naročila!</h4>
                     </button>
                 </a>
             </div>
@@ -55,8 +55,8 @@
         
         
         
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <script src="js/app.js"></script>
     </body>
 
