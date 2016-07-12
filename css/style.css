@@ -1,0 +1,24 @@
+.gumb {
+    height: 420px;
+    width: 100%;
+}
+
+#pacient {
+    height: 350px;
+}
+
+#noga {
+    margin-top: 25px;
+}
+
+.ozadje {
+    background-color: white;
+}
+
+.change-font {
+    font-family: "Trebuchet MS", "Lucida Grande";
+}
+
+.dr_datum {
+    color: #5bc0de !important; 
+}
