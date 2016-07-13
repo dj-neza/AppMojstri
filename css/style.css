@@ -11,6 +11,11 @@
     font-family: "Trebuchet MS", "Lucida Grande";
 }
 
+.change-font-barva {
+    font-family: "Trebuchet MS", "Lucida Grande";
+    color: #103d47 !important;
+}
+
 .dr_datum {
     color: #5bc0de !important; 
 }
@@ -37,7 +42,6 @@
     margin-top: 20px;
 }
 
-
 #minute {
     margin-left: 10px;
 }
@@ -56,4 +60,12 @@
 
 #ura {
     margin-bottom: 15px;
+}
+
+.izbran-termin, .izbrana-ura, .izbran-datum {
+    border: 5px solid red;
+}
+
+.termin, .ura, .datum {
+    background-color: blue;
 }
