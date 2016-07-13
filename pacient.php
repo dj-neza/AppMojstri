@@ -51,9 +51,6 @@
                       </ul>
                     </div>
                     
-                    <h3>IZBIRA TERMINA</h3>
-    	            <div id='calendar' class="koledar-pacient"></div>
-    	            
                 </div>
                 
                 <div class="desni-del-pacient col-xs-6">
