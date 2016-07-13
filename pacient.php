@@ -18,7 +18,10 @@
     </head>
 
     <body>
-        
+        <div class="jumbotron ozadje" align="center">
+            <img src="ikona_podstran.png" class="img-rounded" width="158" height="80">
+            <h1 class="change-font-barva">NAROČI SE!</h1>
+          </div>
         <div class="container">
             
             <div class="row forma-pacient">
@@ -26,7 +29,6 @@
                 <div class="levi-del-pacient col-xs-6" style="text-align: center;">
                     
                     <div class="btn-group" >
-                	  <h3>ZDRAVSTVENA USTANOVA</h3>
                       <button type="button" class="btn">Izberite zdravstveni dom</button>
                       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
                         <span class="caret"></span>
@@ -40,7 +42,6 @@
                     <br/>
                       
                     <div class="btn-group">
-                      <h3>ZDRAVNIK</h3>
                       <button type="button" class="btn">Izberite zdravnika</button>
                       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
                         <span class="caret"></span>
@@ -65,7 +66,7 @@
                         </div>
                     </div> 
                     <h4>Želena ura pregleda</h4>
-                    <div id="ura pregleda">
+                    <div id="ura-pregleda">
                         <div class="termini">
                             <p class="change-font">7:00 - 10:59</p>
                         </div> 
@@ -77,7 +78,7 @@
                         </div>
                     </div>
                     <h4>Željen datum</h4>
-                    <div id="ura pregleda">
+                    <div id="zeljen-datum">
                         <div class="termini">
                             <p class="change-font">čimprej</p>
                         </div> 

@@ -11,6 +11,11 @@
     font-family: "Trebuchet MS", "Lucida Grande";
 }
 
+.change-font-barva {
+    font-family: "Trebuchet MS", "Lucida Grande";
+    color: #103d47 !important;
+}
+
 .dr_datum {
     color: #5bc0de !important; 
 }
@@ -31,6 +36,8 @@
 .zavrni {
     margin-left: 30px;
 }
+
+
 
 #minute {
     margin-left: 10px;
