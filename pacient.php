@@ -23,33 +23,24 @@
             
             <div class="row forma-pacient">
                 
-                <div class="levi-del-pacient col-xs-6" style="text-align: center;">
+                <div class="levi-del-pacient col-md-6" style="text-align: center;">
                     
-                    <div class="btn-group" >
-                	  <h3>ZDRAVSTVENA USTANOVA</h3>
-                      <button type="button" class="btn">Izberite zdravstveni dom</button>
-                      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">ZD Ljubljana - enota Bežigrad</a></li>
-                        <li><a href="#">ZD Ljubljana - enota Moste-Polje</a></li>
-                      </ul>
-                    </div>
-                    
-                    <br/>
-                      
-                    <div class="btn-group">
-                      <h3>ZDRAVNIK</h3>
-                      <button type="button" class="btn">Izberite zdravnika</button>
-                      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Mojca</a></li>
-                        <li><a href="#">Ana</a></li>
-                      </ul>
-                    </div>
+                    <select class="form-control input-mini drop_down" id="zd">
+                        <option value="" disabled selected> Vaš zdravsteni dom </option>
+                        <option id="zd1" value="bezigrad">ZD Ljubljana - enota Bežigrad</option>
+                        <option id="zd2" value="moste">ZD Ljubljana - enota Moste-Polje</option>
+                        <option id="zd3" value="sentvid">ZD Ljubljana - enota Šentvid </option>
+                     </select>
+                  
+                     <select class="form-control input-mini drop_down" id="zd_zdravnik">
+                        <option value="" disabled selected> Zdravnik </option>
+                        <option id="zdr1" value="bezigrad1"> dr. med. Mojca Horvat </option>
+                        <option id="zdr2" value="bezigrad2"> dr. med. Janez Novak </option>
+                        <option id="zdr3" value="sentvid1"> dr. med. Peter Merše </option>
+                        <option id="zdr4" value="sentvid2"> dr. med. Janja Zupančič </option>
+                        <option id="zdr5" value="moste1"> dr. med. Jernej Novak </option>
+                        <option id="zdr6" value="moste2"> dr. med. Ana Horvat </option>
+                     </select>
                     
                     <h3>IZBIRA TERMINA</h3>
                     <h4>Razpoložljivi termini</h4>
@@ -93,7 +84,7 @@
     	            
                 </div>
                 
-                <div class="desni-del-pacient col-xs-6">
+                <div class="desni-del-pacient col-md-6">
                     
                     <p>Izbrani termini:</p>
     	
