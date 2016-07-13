@@ -91,18 +91,33 @@
     	            
                 </div>
                 
-                <div class="desni-del-pacient col-xs-6">
+                <div class="desni-del-pacient col-md-6">
+                    <div class="panel panel-info odmik"> 
+                        <div class="panel-heading"> Opišite težave </div> 
+                        <div class="panel-body" id="tezave"> 
+                            <textarea class="form-control" rows="5" id="opis_tezav"></textarea>
+                        </div> 
+                    </div>
                     
-                    <p>Izbrani termini:</p>
-    	
-                	<p>Opišite problem:</p>
-                	<input type="text" name="opis-problema">
-                	
-                	<p>Podatki:</p>
-                	<input type="text" name="mail">
-                	<input type="text" name="telefon">
-                	<input type="text" name="zdr-kartica">
+                    <div class="panel panel-info odmik"> 
+                        <div class="panel-heading"> Vaši podatki </div> 
+                        <div class="panel-body" id="podatki"> 
+                            <div class="form-group">
+                              <label> Št. zdravstvenega zavarovanja: </label>
+                              <input type="text" class="form-control" id="st_kartice">
+                            </div>
+                            <div class="form-group">
+                              <label> E-mail: </label>
+                              <input type="text" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                              <label> Telefon: </label>
+                              <input type="text" class="form-control" id="tel_st">
+                            </div>
+                        </div> 
+                    </div>
                     
+                    <button type="button" class="btn btn-primary"> Naroči se! </button>
                 </div>
                 
             </div>
