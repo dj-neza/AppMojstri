@@ -68,4 +68,5 @@
 
 .termin, .ura, .datum {
     background-color: blue;
+    cursor: pointer;
 }

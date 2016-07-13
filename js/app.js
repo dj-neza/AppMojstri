@@ -53,6 +53,23 @@ var main = function() {
             $(this).addClass("izbran-datum");
         }
     });
+    
+
+    var zdravniki = []; // tukaj morajo biti zdravniki kot objekti s svojimi id-ji, id-ji ustanov kjer delajo, imeni...
+
+    // val od optionov od selecta za izbrat ustanovo mora biti id ustanove
+    
+    $('#zd').change(function() {
+        var value = $(this).find(':selected').val();
+        $('#zd_zdravnik').empty();
+        for (var i = 0; i < zdravniki.length; i++) {
+            if (zdravniki[i].idUstanova == value) {
+                var naziv; // to nekak sestavis iz imena, priimka
+                $('#zd_zdravnik').append("<option val='" + zdravniki[i].idZdravnik + "'>" + naziv + "</option>");
+            }
+        }
+    });
+    
 
 };
 
