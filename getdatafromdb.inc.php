@@ -2,7 +2,7 @@
 /*
 include_once("db~conn.inc.php"); 
 
-$zdaj = date('Y.m.d');
+$zdaj = date('Y-m-d');
 $sql = "SELECT ime, priimek, email, razlog, zacetek, datum FROM termin WHERE ? >  zacetek;";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $zdaj);
@@ -67,5 +67,7 @@ while($i < $num_rows) {
 
 
 echo '];</script>';
+//$stmt->close();
+
 //require_once("dbclose.inc.php"); 
 ?>
