@@ -25,14 +25,17 @@
         <div class="container">
             <form name="pacient_form" method="post" action="pacient.php">    
             
-                <h2 id="uspeh"> </h2>
-            
+                
+                <div class="panel panel-success" id="uspeh" style="display: none; text-align: center">
+                  <div class="panel-heading change-font">Naročilo je bilo uspešno poslano.</div>
+                </div>
+                
                 <div class="row forma-pacient">
                 
                 <div class="levi-del-pacient col-md-6" style="text-align: center;">
                     <select class="form-control input-mini drop_down" id="zd">
                         <option value="" disabled selected> Vaš zdravsteni dom </option>
-                        <option id="zd1" value="bezigrad" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Bežigrad</option>
+                        <option id="zd1" value="" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Bežigrad</option>
                         <option id="zd2" value="moste">ZD Ljubljana - enota Moste-Polje</option>
                         <option id="zd3" value="sentvid">ZD Ljubljana - enota Šentvid </option>
                      </select>
@@ -135,7 +138,7 @@
         if($_POST['poslano'] == 1) {
         ?>
         <script>
-            $('h2#uspeh').text('dela').css('border', '5px solid green').css('border-radius', '5px').css('text-align', 'center');
+            $('#uspeh').show(500);
         </script>
         <?php
         }

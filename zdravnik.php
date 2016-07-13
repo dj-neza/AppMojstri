@@ -1,3 +1,7 @@
+<?php
+    require_once('getdatafromdb.inc.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
