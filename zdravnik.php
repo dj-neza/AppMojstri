@@ -44,6 +44,7 @@
         <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <script src='fullcalendar/lib/moment.min.js'></script>
         <script src='fullcalendar/fullcalendar.js'></script>
+        <script src='fullcalendar/lang-all.js'></script>
         <script src="js/app.js"></script>
     </body>
 

@@ -47,8 +47,8 @@
                         <div class="panel-heading">Predlagani termini</div> 
                         <div class="panel-body" id="tezave"> 
                         
-                            <button type="button" class="btn btn-primary">Dodatne možnosti iskanja termina</button>
-                            <div class="dont-display">
+                            <button type="button" class="btn btn-primary dodatne-moznosti">Prikaži dodatne možnosti iskanja termina</button>
+                            <div class="filter dont-display">
                                 <h4 class="change-font">Želena ura pregleda</h4>
                                 <div id="razpolozljive-ure">
                                     <div class="ura">

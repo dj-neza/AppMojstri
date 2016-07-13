@@ -1,7 +1,16 @@
 var main = function() {
     $('#calendar').fullCalendar({
         // put your options and callbacks here
-        weekends: false // will hide Saturdays and Sundays
+        header: {
+         left   : 'prev,next',
+         center : 'title',
+         right  : 'agendaDay, agendaWeek',
+        },
+        weekends: false, // will hide Saturdays and Sundays
+        defaultView: 'agendaWeek',
+        slotDuration: '00:10:00',
+        minTime: '07:00:00',
+        maxTime: '19:00:00'
     });
 
     prikaz_marocil(narocila);
@@ -51,6 +60,17 @@ var main = function() {
                 $(this).removeClass("izbran-datum");
             });
             $(this).addClass("izbran-datum");
+        }
+    });
+    
+    // filter
+    $(".dodatne-moznosti").on("click", function() {
+        if ($(".filter").hasClass("dont-display")) {
+            $(".filter").removeClass("dont-display");
+            $(".dodatne-moznosti").text("Skrij dodatne možnosti iskanja termina");
+        } else {
+            $(".filter").addClass("dont-display");
+            $(".dodatne-moznosti").text("Prikaži dodatne možnosti iskanja termina");
         }
     });
     
