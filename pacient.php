@@ -54,26 +54,40 @@
                     <h3>IZBIRA TERMINA</h3>
                     <h4>Razpoložljivi termini</h4>
                     <div id="razpolozljivi-termini">
-                        <div class="termini"></div> 
-                        <div class="termini"></div>
-                        <div class="termini"></div>
+                        <div class="termini">
+                            <p class="change-font">pon, 18.7.2016 13:00</p>
+                        </div> 
+                        <div class="termini">
+                            <p class="change-font">pon, 18.7.2016 17:30</p>
+                        </div>
+                        <div class="termini">
+                            <p class="change-font">tor, 19.7.2016 7:20</p>
+                        </div>
                     </div> 
                     <h4>Želena ura pregleda</h4>
-                    <div class="checkbox">
-                        <label><input type="checkbox"> 7:00 - 10:59</label>
-                      </div>
-                      <div class="checkbox">
-                        <label><input type="checkbox"> 11:00 - 14:59</label>
-                      </div>
-                      <div class="checkbox">
-                        <label><input type="checkbox"> 15:00 - 19:00</label>
-                      </div>
+                    <div id="ura pregleda">
+                        <div class="termini">
+                            <p class="change-font">7:00 - 10:59</p>
+                        </div> 
+                        <div class="termini">
+                            <p class="change-font">11:00 - 14:59</p>
+                        </div>
+                        <div class="termini">
+                            <p class="change-font">15:00 - 19:00</p>
+                        </div>
+                    </div>
                     <h4>Željen datum</h4>
-                     <form>
-                      <input type="radio" name="gender" value="čimprej" checked> Male<br>
-                      <input type="radio" name="gender" value="čez 1 teden"> Female<br>
-                      <input type="radio" name="gender" value="čez 1 mesec"> Other
-                    </form> 
+                    <div id="ura pregleda">
+                        <div class="termini">
+                            <p class="change-font">čimprej</p>
+                        </div> 
+                        <div class="termini">
+                            <p class="change-font">naslednji teden</p>
+                        </div>
+                        <div class="termini">
+                            <p class="change-font">naslednji mesec</p>
+                        </div>
+                    </div>
     	            
                 </div>
                 
