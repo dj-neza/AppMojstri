@@ -52,7 +52,28 @@
                     </div>
                     
                     <h3>IZBIRA TERMINA</h3>
-    	            <div id='calendar' class="koledar-pacient"></div>
+                    <h4>Razpoložljivi termini</h4>
+                    <div id="razpolozljivi-termini">
+                        <div class="termini"></div> 
+                        <div class="termini"></div>
+                        <div class="termini"></div>
+                    </div> 
+                    <h4>Želena ura pregleda</h4>
+                    <div class="checkbox">
+                        <label><input type="checkbox"> 7:00 - 10:59</label>
+                      </div>
+                      <div class="checkbox">
+                        <label><input type="checkbox"> 11:00 - 14:59</label>
+                      </div>
+                      <div class="checkbox">
+                        <label><input type="checkbox"> 15:00 - 19:00</label>
+                      </div>
+                    <h4>Željen datum</h4>
+                     <form>
+                      <input type="radio" name="gender" value="čimprej" checked> Male<br>
+                      <input type="radio" name="gender" value="čez 1 teden"> Female<br>
+                      <input type="radio" name="gender" value="čez 1 mesec"> Other
+                    </form> 
     	            
                 </div>
                 
