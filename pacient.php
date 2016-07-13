@@ -20,7 +20,7 @@
     <body>
         <div class="jumbotron ozadje" align="center">
             <img src="ikona_podstran.png" class="img-rounded" width="140" height="70">
-            <h1 class="change-font-barva">NAROČI SE!</h1>
+            <h1 class="change-font-barva2">NAROČI SE!</h1>
           </div>
         <div class="container">
             <form name="pacient_form" method="post" action="pacient.php">    
@@ -34,74 +34,58 @@
                 
                 <div class="levi-del-pacient col-md-6" style="text-align: center;">
                     <select class="form-control input-mini drop_down" id="zd">
-                        <option value="" disabled selected> Vaš zdravsteni dom </option>
-                        <option id="zd1" value="" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Bežigrad</option>
-                        <option id="zd2" value="moste">ZD Ljubljana - enota Moste-Polje</option>
-                        <option id="zd3" value="sentvid">ZD Ljubljana - enota Šentvid </option>
+                        <option value="" disabled selected style=" font-family: 'Trebuchet MS'"> Vaš zdravsteni dom </option>
+                        <option id="zd1" value="bezigrad" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Bežigrad</option>
+                        <option id="zd2" value="moste" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Moste-Polje</option>
+                        <option id="zd3" value="sentvid" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Šentvid </option>
                      </select>
                   
                      <select class="form-control input-mini drop_down" id="zd_zdravnik">
-                        <option value="" disabled selected> Zdravnik </option>
-                        <option id="zdr1" value="bezigrad1"> dr. med. Mojca Horvat </option>
-                        <option id="zdr2" value="bezigrad2" > dr. med. Janez Novak </option>
-                        <option id="zdr3" value="sentvid1"> dr. med. Peter Merše </option>
-                        <option id="zdr4" value="sentvid2"> dr. med. Janja Zupančič </option>
-                        <option id="zdr5" value="moste1"> dr. med. Jernej Novak </option>
-                        <option id="zdr6" value="moste2"> dr. med. Ana Horvat </option>
+                        <option value="" disabled selected style=" font-family: 'Trebuchet MS'"> Zdravnik </option>
+                        <option id="zdr1" value="bezigrad1" style=" font-family: 'Trebuchet MS'"> dr. med. Mojca Horvat </option>
+                        <option id="zdr2" value="bezigrad2" style=" font-family: 'Trebuchet MS'"> dr. med. Janez Novak </option>
+                        <option id="zdr3" value="sentvid1" style=" font-family: 'Trebuchet MS'"> dr. med. Peter Merše </option>
+                        <option id="zdr4" value="sentvid2" style=" font-family: 'Trebuchet MS'"> dr. med. Janja Zupančič </option>
+                        <option id="zdr5" value="moste1" style=" font-family: 'Trebuchet MS'"> dr. med. Jernej Novak </option>
+                        <option id="zdr6" value="moste2" style=" font-family: 'Trebuchet MS'"> dr. med. Ana Horvat </option>
                      </select>
+                    
                     <div class="panel panel-info odmik"> 
-                        <div class="panel-heading">Predlagani termini</div> 
+                        <div class="panel-heading change-font">Predlagani termini</div> 
                         <div class="panel-body" id="tezave"> 
                         
-                            <button type="button" class="btn btn-primary">Dodatne možnosti iskanja termina</button>
-                            <div class="dont-display">
-                                <h4 class="change-font">Želena ura pregleda</h4>
+                            <button type="button" class="btn btn-primary dodatne-moznosti">
+                                Dodatne možnosti iskanja termina<span class="presledek"></span>
+                                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                            </button>
+                            <div class="filter dont-display">
+                                <label class="change-font">Želena ura pregleda</label>
                                 <div id="razpolozljive-ure">
-                                    <div class="ura">
-                                        <p class="change-font">7:00 - 10:59</p>
-                                    </div> 
-                                    <div class="ura">
-                                        <p class="change-font">11:00 - 14:59</p>
-                                    </div>
-                                    <div class="ura">
-                                        <p class="change-font">15:00 - 19:00</p>
-                                    </div>
+                                    <div class="panel panel-info odmik ura change-font-barva">7:00 - 10:59</div> 
+                                    <div class="panel panel-info odmik ura change-font-barva">11:00 - 14:59</div>
+                                    <div class="panel panel-info odmik ura change-font-barva">15:00 - 19:00</div>
                                 </div>
                                 
-                                <h4 class="change-font">Želen datum</h4>
+                                <label class="change-font">Želen datum</label>
                                 <div id="razpolozljivi-datumi">
-                                    <div class="datum">
-                                        <p class="change-font">čimprej</p>
-                                    </div> 
-                                    <div class="datum">
-                                        <p class="change-font">naslednji teden</p>
-                                    </div>
-                                    <div class="datum">
-                                        <p class="change-font">naslednji mesec</p>
-                                    </div>
+                                    <div class="panel panel-info odmik datum change-font-barva">čimprej</div> 
+                                    <div class="panel panel-info odmik datum change-font-barva">naslednji teden</div>
+                                    <div class="panel panel-info odmik datum change-font-barva">naslednji mesec</div>
                                 </div>
                             </div><br></br>
                             
                             <div id="razpolozljivi-termini">
-                                <div class="termin">
-                                    <p class="change-font">pon, 18.7.2016 13:00</p>
-                                </div> 
-                                <div class="termin">
-                                    <p class="change-font">pon, 18.7.2016 17:30</p>
-                                </div>
-                                <div class="termin">
-                                    <p class="change-font">tor, 19.7.2016 7:20</p>
-                                </div>
+                                <div class="panel panel-info odmik termin change-font-barva">pon, 18.7.2016 13:00</div> 
+                                <div class="panel panel-info odmik termin change-font-barva">pon, 18.7.2016 17:30</div>
+                                <div class="panel panel-info odmik termin change-font-barva">tor, 19.7.2016 7:20</div>
                             </div>
                         
                         </div>
-                        
-                        <input type="submit" class="btn btn-primary" value="Naroči se!">
                     </div>
                     
                 </div>
                 
-                <div class="desni-del-pacient col-md-6">
+                <div class="desni-del-pacient col-md-6" style="text-align: center;">
                     <div class="panel panel-info odmik"> 
                         <div class="panel-heading change-font"> Opišite težave </div> 
                         <div class="panel-body" id="tezave"> 
@@ -113,19 +97,23 @@
                         <div class="panel-heading change-font"> Vaši podatki </div> 
                         <div class="panel-body" id="podatki"> 
                             <div class="form-group">
-                              <label class="change-font"> Št. zdravstvene kartice: </label>
+                              <label class="change-font-barva"> Št. zdravstvene kartice: </label>
                               <input type="text" class="form-control" id="st_kartice">
                             </div>
                             <div class="form-group">
-                              <label class="change-font"> E-mail: </label>
+                              <label class="change-font-barva"> E-mail: </label>
                               <input type="text" class="form-control" id="email">
                             </div>
                             <div class="form-group">
-                              <label class="change-font"> Telefon: </label>
+                              <label class="change-font-besedilo"> Telefon: </label>
                               <input type="text" class="form-control" id="tel_st">
                             </div>
                         </div>
                     </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <input type="submit" class="btn btn-primary" value="Naroči se!">
                 </div>
                 
                 <input type="hidden" name="poslano" value="1">
