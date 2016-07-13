@@ -11,6 +11,20 @@
     font-family: "Trebuchet MS", "Lucida Grande";
 }
 
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #103d47;
+  background-color: #bcbabe;
+  border-color: #bcbabe;
+}
+.btn-primary {
+  color: #103d47;
+  background-color: #f1f1f2;
+  border-color: #bcbabe;
+}
+
 .change-font-barva {
     font-family: "Trebuchet MS", "Lucida Grande";
     color: #103d47 !important;
@@ -41,6 +55,7 @@
 .drop_down {
     margin-top: 20px;
 }
+
 
 #minute {
     margin-left: 10px;
