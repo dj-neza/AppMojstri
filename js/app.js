@@ -1,7 +1,16 @@
 var main = function() {
     $('#calendar').fullCalendar({
         // put your options and callbacks here
-        weekends: false // will hide Saturdays and Sundays
+        header: {
+         left   : 'prev,next',
+         center : 'title',
+         right  : 'agendaDay, agendaWeek',
+        },
+        weekends: false, // will hide Saturdays and Sundays
+        defaultView: 'agendaWeek',
+        slotDuration: '00:10:00',
+        minTime: '07:00:00',
+        maxTime: '19:00:00'
     });
 
     prikaz_marocil(narocila);
@@ -20,6 +29,67 @@ var main = function() {
     $(".zavrni").click(function(){
         alert("Ponudi nove možnosti.");
     });
+    
+    
+    // za design pacient.php
+    
+    // selectanje razpolozljivega termina
+    $(".termin").on("click", function() {
+        $('#razpolozljivi-termini').find('div').each(function(){
+            $(this).removeClass("izbran-termin");
+        });
+        $(this).addClass("izbran-termin");
+    });
+    
+    // selectanje ure pregleda
+    $(".ura").on("click", function() {
+        if ($(this).hasClass("izbrana-ura")) {
+            $(this).removeClass("izbrana-ura");
+        } else {
+            $(this).addClass("izbrana-ura");
+        }
+        
+    });
+    
+    // selectanje zeljenega datuma
+    $(".datum").on("click", function() {
+        if ($(this).hasClass("izbran-datum")) {
+            $(this).removeClass("izbran-datum");
+        } else {
+            $('#razpolozljivi-datumi').find('div').each(function(){
+                $(this).removeClass("izbran-datum");
+            });
+            $(this).addClass("izbran-datum");
+        }
+    });
+    
+    // filter
+    $(".dodatne-moznosti").on("click", function() {
+        if ($(".filter").hasClass("dont-display")) {
+            $(".filter").removeClass("dont-display");
+            $(".dodatne-moznosti").html('Skrij dodatne možnosti iskanja termina<span class="presledek"></span> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>');
+        } else {
+            $(".filter").addClass("dont-display");
+            $(".dodatne-moznosti").html('Prikaži dodatne možnosti iskanja termina<span class="presledek"></span> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>');
+        }
+    });
+    
+
+    var zdravniki = []; // tukaj morajo biti zdravniki kot objekti s svojimi id-ji, id-ji ustanov kjer delajo, imeni...
+
+    // val od optionov od selecta za izbrat ustanovo mora biti id ustanove
+    
+    $('#zd').change(function() {
+        var value = $(this).find(':selected').val();
+        $('#zd_zdravnik').empty();
+        for (var i = 0; i < zdravniki.length; i++) {
+            if (zdravniki[i].idUstanova == value) {
+                var naziv; // to nekak sestavis iz imena, priimka
+                $('#zd_zdravnik').append("<option val='" + zdravniki[i].idZdravnik + "'>" + naziv + "</option>");
+            }
+        }
+    });
+    
 
 };
 
@@ -64,7 +134,7 @@ function prikaz_marocil (narocila) {
         $('#narocilnice').append(
         '<div class="panel panel-info odmik"> \
             <div class="panel-heading">'+ ime_priimek +'</div> \
-            <div class="panel-body" id="podrobno" display:none;> \
+            <div class="panel-body" id="podrobno"> \
                 <p class="change-font">'+ razlog +'</p> \
                 <label class="change-font" id="datum"> Datum: ' + datum + '</label> </br> \
                 <label class="change-font" id="ura"> Ura: ' + ura + '</label> \

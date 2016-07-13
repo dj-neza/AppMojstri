@@ -11,18 +11,52 @@
     font-family: "Trebuchet MS", "Lucida Grande";
 }
 
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #103d47;
+  font-family: "Trebuchet MS", "Lucida Grande";
+  background-color: #bcbabe;
+  border-color: #bcbabe;
+}
+.btn-primary {
+  color: #103d47;
+  font-family: "Trebuchet MS", "Lucida Grande";
+  background-color: #f1f1f2;
+  border-color: #bcbabe;
+}
+
+.change-font-barva {
+    font-family: "Trebuchet MS", "Lucida Grande";
+    color: #103d47;
+}
+
+.change-font-barva2 {
+    font-family: "Trebuchet MS", "Lucida Grande";
+    color: #103d47 !important;
+}
+
+.change-font-besedilo {
+    font-family: "Trebuchet MS", "Lucida Grande";
+    font-style: normal;
+    color: #103d47 !important;
+}
+
 .dr_datum {
     color: #5bc0de !important; 
 }
 
-.koledar-pacient {
+.koledar-zdravnik {
     height: 500px;
     width: 500px;
+    margin-top: 50px;
 }
 
 .dont-display {
     display: none;
 }
+
 
 .odmik {
     margin-top: 20px;
@@ -30,6 +64,17 @@
 
 .zavrni {
     margin-left: 30px;
+}
+
+.drop_down {
+    margin-top: 20px;
+}
+
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #5bc0de;
+    color: white;
+
 }
 
 #minute {
@@ -50,4 +95,20 @@
 
 #ura {
     margin-bottom: 15px;
+}
+
+.izbran-termin, .izbrana-ura, .izbran-datum {
+    border-color: #5bc0de;
+    background-color: #5bc0de !important;
+    color: white;
+    box-shadow:0 0 15px #5bc0de;
+}
+.presledek {
+    width: 5px;
+}
+
+.termin, .ura, .datum {
+    cursor: pointer;
+    background-color: #a1d6e2;
+    height: 30px;
 }
