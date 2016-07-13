@@ -23,8 +23,11 @@
             <h1 class="change-font-barva">NAROČI SE!</h1>
           </div>
         <div class="container">
+            <form name="pacient_form" method="post" action="pacient.php">    
             
-            <div class="row forma-pacient">
+                <h2 id="uspeh"> </h2>
+            
+                <div class="row forma-pacient">
                 
                 <div class="levi-del-pacient col-md-6" style="text-align: center;">
                     <select class="form-control input-mini drop_down" id="zd">
@@ -88,45 +91,56 @@
                                 </div>
                             </div>
                         
-                            
                         </div>
+                        
+                        <input type="submit" class="btn btn-primary" value="Naroči se!">
                     </div>
-    	            
+                    
                 </div>
                 
                 <div class="desni-del-pacient col-md-6">
                     <div class="panel panel-info odmik"> 
-                        <div class="panel-heading"> Opišite težave </div> 
+                        <div class="panel-heading change-font"> Opišite težave </div> 
                         <div class="panel-body" id="tezave"> 
                             <textarea class="form-control" rows="5" id="opis_tezav"></textarea>
                         </div> 
                     </div>
                     
                     <div class="panel panel-info odmik"> 
-                        <div class="panel-heading"> Vaši podatki </div> 
+                        <div class="panel-heading change-font"> Vaši podatki </div> 
                         <div class="panel-body" id="podatki"> 
                             <div class="form-group">
-                              <label> Št. zdravstvenega zavarovanja: </label>
+                              <label class="change-font"> Št. zdravstvene kartice: </label>
                               <input type="text" class="form-control" id="st_kartice">
                             </div>
                             <div class="form-group">
-                              <label> E-mail: </label>
+                              <label class="change-font"> E-mail: </label>
                               <input type="text" class="form-control" id="email">
                             </div>
                             <div class="form-group">
-                              <label> Telefon: </label>
+                              <label class="change-font"> Telefon: </label>
                               <input type="text" class="form-control" id="tel_st">
                             </div>
-                        </div> 
+                        </div>
                     </div>
-                    
-                    <button type="button" class="btn btn-primary"> Naroči se! </button>
                 </div>
                 
-            </div>
-            
+                <input type="hidden" name="poslano" value="1">
+        
+            </form>
         </div>
-    	
+            
+        
+    <?php
+        if($_POST['poslano'] == 1) {
+        ?>
+        <script>
+            $('h2#uspeh').text('dela').css('border', '5px solid green').css('border-radius', '5px').css('text-align', 'center');
+        </script>
+        <?php
+        }
+    ?>
+	
 
     </body>
 
