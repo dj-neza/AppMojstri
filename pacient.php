@@ -26,73 +26,67 @@
             
             <div class="row forma-pacient">
                 
-                <div class="levi-del-pacient col-xs-6" style="text-align: center;">
-                    
-                    <div class="btn-group" >
-                      <button type="button" class="btn">Izberite zdravstveni dom</button>
-                      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">ZD Ljubljana - enota Bežigrad</a></li>
-                        <li><a href="#">ZD Ljubljana - enota Moste-Polje</a></li>
-                      </ul>
-                    </div>
-                    
-                    <br/>
-                      
-                    <div class="btn-group">
-                      <button type="button" class="btn">Izberite zdravnika</button>
-                      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Mojca</a></li>
-                        <li><a href="#">Ana</a></li>
-                      </ul>
-                    </div>
+                <div class="levi-del-pacient col-md-6" style="text-align: center;">
+                    <select class="form-control input-mini drop_down" id="zd">
+                        <option value="" disabled selected> Vaš zdravsteni dom </option>
+                        <option id="zd1" value="bezigrad">ZD Ljubljana - enota Bežigrad</option>
+                        <option id="zd2" value="moste">ZD Ljubljana - enota Moste-Polje</option>
+                        <option id="zd3" value="sentvid">ZD Ljubljana - enota Šentvid </option>
+                     </select>
+                  
+                     <select class="form-control input-mini drop_down" id="zd_zdravnik">
+                        <option value="" disabled selected> Zdravnik </option>
+                        <option id="zdr1" value="bezigrad1"> dr. med. Mojca Horvat </option>
+                        <option id="zdr2" value="bezigrad2"> dr. med. Janez Novak </option>
+                        <option id="zdr3" value="sentvid1"> dr. med. Peter Merše </option>
+                        <option id="zdr4" value="sentvid2"> dr. med. Janja Zupančič </option>
+                        <option id="zdr5" value="moste1"> dr. med. Jernej Novak </option>
+                        <option id="zdr6" value="moste2"> dr. med. Ana Horvat </option>
+                     </select>
                     
                     <h3>IZBIRA TERMINA</h3>
                     <h4>Razpoložljivi termini</h4>
                     <div id="razpolozljivi-termini">
-                        <div class="termini">
+                        <div class="termin">
                             <p class="change-font">pon, 18.7.2016 13:00</p>
                         </div> 
-                        <div class="termini">
+                        <div class="termin">
                             <p class="change-font">pon, 18.7.2016 17:30</p>
                         </div>
-                        <div class="termini">
+                        <div class="termin">
                             <p class="change-font">tor, 19.7.2016 7:20</p>
                         </div>
-                    </div> 
+                    </div>
+                    
                     <h4>Želena ura pregleda</h4>
-                    <div id="ura-pregleda">
-                        <div class="termini">
+                    <div id="razpolozljive-ure">
+                        <div class="ura">
                             <p class="change-font">7:00 - 10:59</p>
                         </div> 
-                        <div class="termini">
+                        <div class="ura">
                             <p class="change-font">11:00 - 14:59</p>
                         </div>
-                        <div class="termini">
+                        <div class="ura">
                             <p class="change-font">15:00 - 19:00</p>
                         </div>
                     </div>
+                    
                     <h4>Željen datum</h4>
-                    <div id="zeljen-datum">
-                        <div class="termini">
+                    <div id="razpolozljivi-datumi">
+                        <div class="datum">
                             <p class="change-font">čimprej</p>
                         </div> 
-                        <div class="termini">
+                        <div class="datum">
                             <p class="change-font">naslednji teden</p>
                         </div>
-                        <div class="termini">
+                        <div class="datum">
                             <p class="change-font">naslednji mesec</p>
                         </div>
                     </div>
     	            
                 </div>
                 
-                <div class="desni-del-pacient col-xs-6">
+                <div class="desni-del-pacient col-md-6">
                     
                     <p>Izbrani termini:</p>
     	

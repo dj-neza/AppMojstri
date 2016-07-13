@@ -20,6 +20,39 @@ var main = function() {
     $(".zavrni").click(function(){
         alert("Ponudi nove možnosti.");
     });
+    
+    
+    // za design pacient.php
+    
+    // selectanje razpolozljivega termina
+    $(".termin").on("click", function() {
+        $('#razpolozljivi-termini').find('div').each(function(){
+            $(this).removeClass("izbran-termin");
+        });
+        $(this).addClass("izbran-termin");
+    });
+    
+    // selectanje ure pregleda
+    $(".ura").on("click", function() {
+        if ($(this).hasClass("izbrana-ura")) {
+            $(this).removeClass("izbrana-ura");
+        } else {
+            $(this).addClass("izbrana-ura");
+        }
+        
+    });
+    
+    // selectanje zeljenega datuma
+    $(".datum").on("click", function() {
+        if ($(this).hasClass("izbran-datum")) {
+            $(this).removeClass("izbran-datum");
+        } else {
+            $('#razpolozljivi-datumi').find('div').each(function(){
+                $(this).removeClass("izbran-datum");
+            });
+            $(this).addClass("izbran-datum");
+        }
+    });
 
 };
 
