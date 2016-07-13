@@ -57,6 +57,7 @@
     display: none;
 }
 
+
 .odmik {
     margin-top: 20px;
 }
@@ -107,6 +108,7 @@
 }
 
 .termin, .ura, .datum {
+    cursor: pointer;
     background-color: #a1d6e2;
     height: 30px;
 }

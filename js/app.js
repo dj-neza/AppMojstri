@@ -1,7 +1,16 @@
 var main = function() {
     $('#calendar').fullCalendar({
         // put your options and callbacks here
-        weekends: false // will hide Saturdays and Sundays
+        header: {
+         left   : 'prev,next',
+         center : 'title',
+         right  : 'agendaDay, agendaWeek',
+        },
+        weekends: false, // will hide Saturdays and Sundays
+        defaultView: 'agendaWeek',
+        slotDuration: '00:10:00',
+        minTime: '07:00:00',
+        maxTime: '19:00:00'
     });
 
     prikaz_marocil(narocila);
@@ -53,6 +62,34 @@ var main = function() {
             $(this).addClass("izbran-datum");
         }
     });
+    
+    // filter
+    $(".dodatne-moznosti").on("click", function() {
+        if ($(".filter").hasClass("dont-display")) {
+            $(".filter").removeClass("dont-display");
+            $(".dodatne-moznosti").text("Skrij dodatne možnosti iskanja termina");
+        } else {
+            $(".filter").addClass("dont-display");
+            $(".dodatne-moznosti").text("Prikaži dodatne možnosti iskanja termina");
+        }
+    });
+    
+
+    var zdravniki = []; // tukaj morajo biti zdravniki kot objekti s svojimi id-ji, id-ji ustanov kjer delajo, imeni...
+
+    // val od optionov od selecta za izbrat ustanovo mora biti id ustanove
+    
+    $('#zd').change(function() {
+        var value = $(this).find(':selected').val();
+        $('#zd_zdravnik').empty();
+        for (var i = 0; i < zdravniki.length; i++) {
+            if (zdravniki[i].idUstanova == value) {
+                var naziv; // to nekak sestavis iz imena, priimka
+                $('#zd_zdravnik').append("<option val='" + zdravniki[i].idZdravnik + "'>" + naziv + "</option>");
+            }
+        }
+    });
+    
 
 };
 
