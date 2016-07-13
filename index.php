@@ -20,16 +20,16 @@
             <div class="col-lg-6">
                 <a href="pacient.php">
                     <button type="button" class="btn btn-info gumb" width="100%">
-                        <img src="patient.png" class="img-thumbnail" id="pacient">
-                        <h4 class="change-font">Naroči se!</h4>
+                        <img src="pacient.png" class="img-rounded" id="pacient">
+                        <h3 class="change-font">Naroči se!</h3>
                     </button>
                 </a>
             </div>
             <div class="col-lg-6">
                 <a href="zdravnik.php">
                     <button type="button" class="btn btn-info gumb" width="100%">
-                        <img src="doctors.png" class="img-thumbnail" id="pacient">
-                        <h4 class="change-font">Preveri naročila!</h4>
+                        <img src="zdravnik.png" class="img-rounded" id="pacient">
+                        <h3 class="change-font">Preveri naročila!</h3>
                     </button>
                 </a>
             </div>
