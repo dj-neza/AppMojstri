@@ -34,18 +34,24 @@ var main = function() {
     
     // selectanje ure pregleda
     $(".ura").on("click", function() {
-        $('#razpolozljive-ure').find('div').each(function(){
+        if ($(this).hasClass("izbrana-ura")) {
             $(this).removeClass("izbrana-ura");
-        });
-        $(this).addClass("izbrana-ura");
+        } else {
+            $(this).addClass("izbrana-ura");
+        }
+        
     });
     
     // selectanje zeljenega datuma
     $(".datum").on("click", function() {
-        $('#razpolozljivi-datumi').find('div').each(function(){
+        if ($(this).hasClass("izbran-datum")) {
             $(this).removeClass("izbran-datum");
-        });
-        $(this).addClass("izbran-datum");
+        } else {
+            $('#razpolozljivi-datumi').find('div').each(function(){
+                $(this).removeClass("izbran-datum");
+            });
+            $(this).addClass("izbran-datum");
+        }
     });
 
 };
