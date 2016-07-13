@@ -16,17 +16,30 @@
 .btn-primary:active,
 .btn-primary.active {
   color: #103d47;
+  font-family: "Trebuchet MS", "Lucida Grande";
   background-color: #bcbabe;
   border-color: #bcbabe;
 }
 .btn-primary {
   color: #103d47;
+  font-family: "Trebuchet MS", "Lucida Grande";
   background-color: #f1f1f2;
   border-color: #bcbabe;
 }
 
 .change-font-barva {
     font-family: "Trebuchet MS", "Lucida Grande";
+    color: #103d47;
+}
+
+.change-font-barva2 {
+    font-family: "Trebuchet MS", "Lucida Grande";
+    color: #103d47 !important;
+}
+
+.change-font-besedilo {
+    font-family: "Trebuchet MS", "Lucida Grande";
+    font-style: normal;
     color: #103d47 !important;
 }
 
@@ -56,6 +69,12 @@
     margin-top: 20px;
 }
 
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #5bc0de;
+    color: white;
+
+}
 
 #minute {
     margin-left: 10px;
@@ -78,11 +97,16 @@
 }
 
 .izbran-termin, .izbrana-ura, .izbran-datum {
-    border: 5px;
     border-color: #5bc0de;
     background-color: #5bc0de !important;
+    color: white;
+    box-shadow:0 0 15px #5bc0de;
+}
+.presledek {
+    width: 5px;
 }
 
 .termin, .ura, .datum {
     background-color: #a1d6e2;
+    height: 30px;
 }
