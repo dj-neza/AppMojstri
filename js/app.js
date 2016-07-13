@@ -114,7 +114,7 @@ function prikaz_marocil (narocila) {
         $('#narocilnice').append(
         '<div class="panel panel-info odmik"> \
             <div class="panel-heading">'+ ime_priimek +'</div> \
-            <div class="panel-body" id="podrobno" display:none;> \
+            <div class="panel-body" id="podrobno"> \
                 <p class="change-font">'+ razlog +'</p> \
                 <label class="change-font" id="datum"> Datum: ' + datum + '</label> </br> \
                 <label class="change-font" id="ura"> Ura: ' + ura + '</label> \
