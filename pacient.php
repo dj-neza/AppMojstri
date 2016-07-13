@@ -59,19 +59,43 @@
                                 <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
                             </button>
                             <div class="filter dont-display">
-                                <label class="change-font">Želena ura pregleda</label>
-                                <div id="razpolozljive-ure">
-                                    <div class="panel panel-info odmik ura change-font-barva">7:00 - 10:59</div> 
-                                    <div class="panel panel-info odmik ura change-font-barva">11:00 - 14:59</div>
-                                    <div class="panel panel-info odmik ura change-font-barva">15:00 - 19:00</div>
+                                <label class="change-font" style="display: block;">Želena ura pregleda: </br> </label>
+                                <div class="btn-group" data-toggle="buttons">
+                                  <label class="btn btn-primary panel panel-info odmik ura change-font-barva">
+                                    <input type="checkbox" autocomplete="off"> 7h - 11h
+                                  </label>
+                                  <label class="btn btn-primary panel panel-info odmik ura change-font-barva">
+                                    <input type="checkbox" autocomplete="off"> 11h - 15h
+                                  </label>
+                                  <label class="btn btn-primary panel panel-info odmik ura change-font-barva">
+                                    <input type="checkbox" autocomplete="off"> 15h - 19h
+                                  </label>
                                 </div>
                                 
-                                <label class="change-font">Želen datum</label>
-                                <div id="razpolozljivi-datumi">
-                                    <div class="panel panel-info odmik datum change-font-barva">čimprej</div> 
-                                    <div class="panel panel-info odmik datum change-font-barva">naslednji teden</div>
-                                    <div class="panel panel-info odmik datum change-font-barva">naslednji mesec</div>
+                                    
+                                <label class="change-font" style="display: block;">Želen datum:</label>
+                                
+                                <div class="btn-group" data-toggle="buttons">
+                                  <label class="btn btn-primary">
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked> čim prej
+                                  </label>
+                                  <label class="btn btn-primary">
+                                    <input type="radio" name="options" id="option2" autocomplete="off"> naslednji teden
+                                  </label>
+                                  <label class="btn btn-primary">
+                                    <input type="radio" name="options" id="option3" autocomplete="off"> naslednji mesec
+                                  </label>
                                 </div>
+                                
+                                
+                                    <!--
+                                    <div class="btn-group" id="razpolozljivi-datumi"> 
+                                        <button type="button" class="panel panel-info odmik datum change-font-barva"> čim prej </button>
+                                        <button type="button" class="panel panel-info odmik datum change-font-barva"> naslednji teden </button>
+                                        <button type="button" class="panel panel-info odmik datum change-font-barva"> naslednji mesec </button>
+                                    </div>
+                                    -->
+                                
                             </div><br></br>
                             
                             <div id="razpolozljivi-termini">
