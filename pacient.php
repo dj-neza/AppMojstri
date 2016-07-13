@@ -23,102 +23,117 @@
             <h1 class="change-font-barva">NAROČI SE!</h1>
           </div>
         <div class="container">
+            <form name="pacient_form" method="post" action="pacient.php">    
             
-            <div class="row forma-pacient">
-                
-                <div class="levi-del-pacient col-md-6" style="text-align: center;">
-                    <select class="form-control input-mini drop_down" id="zd">
-                        <option value="" disabled selected> Vaš zdravsteni dom </option>
-                        <option id="zd1" value="bezigrad">ZD Ljubljana - enota Bežigrad</option>
-                        <option id="zd2" value="moste">ZD Ljubljana - enota Moste-Polje</option>
-                        <option id="zd3" value="sentvid">ZD Ljubljana - enota Šentvid </option>
-                     </select>
-                  
-                     <select class="form-control input-mini drop_down" id="zd_zdravnik">
-                        <option value="" disabled selected> Zdravnik </option>
-                        <option id="zdr1" value="bezigrad1"> dr. med. Mojca Horvat </option>
-                        <option id="zdr2" value="bezigrad2"> dr. med. Janez Novak </option>
-                        <option id="zdr3" value="sentvid1"> dr. med. Peter Merše </option>
-                        <option id="zdr4" value="sentvid2"> dr. med. Janja Zupančič </option>
-                        <option id="zdr5" value="moste1"> dr. med. Jernej Novak </option>
-                        <option id="zdr6" value="moste2"> dr. med. Ana Horvat </option>
-                     </select>
+                <h2 id="uspeh"> </h2>
+            
+                <div class="row forma-pacient">
                     
-                    <h3>IZBIRA TERMINA</h3>
-                    <h4>Razpoložljivi termini</h4>
-                    <div id="razpolozljivi-termini">
-                        <div class="termin">
-                            <p class="change-font">pon, 18.7.2016 13:00</p>
-                        </div> 
-                        <div class="termin">
-                            <p class="change-font">pon, 18.7.2016 17:30</p>
+                    <div class="levi-del-pacient col-md-6" style="text-align: center;">
+                        
+                        <select class="form-control input-mini drop_down" id="zd">
+                            <option value="" disabled selected> Vaš zdravsteni dom </option>
+                            <option id="zd1" value="bezigrad">ZD Ljubljana - enota Bežigrad</option>
+                            <option id="zd2" value="moste">ZD Ljubljana - enota Moste-Polje</option>
+                            <option id="zd3" value="sentvid">ZD Ljubljana - enota Šentvid </option>
+                         </select>
+                      
+                         <select class="form-control input-mini drop_down" id="zd_zdravnik">
+                            <option value="" disabled selected> Zdravnik </option>
+                            <option id="zdr1" value="bezigrad1"> dr. med. Mojca Horvat </option>
+                            <option id="zdr2" value="bezigrad2"> dr. med. Janez Novak </option>
+                            <option id="zdr3" value="sentvid1"> dr. med. Peter Merše </option>
+                            <option id="zdr4" value="sentvid2"> dr. med. Janja Zupančič </option>
+                            <option id="zdr5" value="moste1"> dr. med. Jernej Novak </option>
+                            <option id="zdr6" value="moste2"> dr. med. Ana Horvat </option>
+                         </select>
+                        
+                        <h3>IZBIRA TERMINA</h3>
+                        <h4>Razpoložljivi termini</h4>
+                        <div id="razpolozljivi-termini">
+                            <div class="termin">
+                                <p class="change-font">pon, 18.7.2016 13:00</p>
+                            </div> 
+                            <div class="termin">
+                                <p class="change-font">pon, 18.7.2016 17:30</p>
+                            </div>
+                            <div class="termin">
+                                <p class="change-font">tor, 19.7.2016 7:20</p>
+                            </div>
                         </div>
-                        <div class="termin">
-                            <p class="change-font">tor, 19.7.2016 7:20</p>
+                        
+                        <h4>Želena ura pregleda</h4>
+                        <div id="razpolozljive-ure">
+                            <div class="ura">
+                                <p class="change-font">7:00 - 10:59</p>
+                            </div> 
+                            <div class="ura">
+                                <p class="change-font">11:00 - 14:59</p>
+                            </div>
+                            <div class="ura">
+                                <p class="change-font">15:00 - 19:00</p>
+                            </div>
                         </div>
+                        
+                        <h4>Željen datum</h4>
+                        <div id="razpolozljivi-datumi">
+                            <div class="datum">
+                                <p class="change-font">čimprej</p>
+                            </div> 
+                            <div class="datum">
+                                <p class="change-font">naslednji teden</p>
+                            </div>
+                            <div class="datum">
+                                <p class="change-font">naslednji mesec</p>
+                            </div>
+                        </div>
+        	            
                     </div>
                     
-                    <h4>Želena ura pregleda</h4>
-                    <div id="razpolozljive-ure">
-                        <div class="ura">
-                            <p class="change-font">7:00 - 10:59</p>
-                        </div> 
-                        <div class="ura">
-                            <p class="change-font">11:00 - 14:59</p>
+                    <div class="desni-del-pacient col-md-6">
+                        <div class="panel panel-info odmik"> 
+                            <div class="panel-heading change-font"> Opišite težave </div> 
+                            <div class="panel-body" id="tezave"> 
+                                <textarea class="form-control" rows="5" id="opis_tezav"></textarea>
+                            </div> 
                         </div>
-                        <div class="ura">
-                            <p class="change-font">15:00 - 19:00</p>
+                        
+                        <div class="panel panel-info odmik"> 
+                            <div class="panel-heading change-font"> Vaši podatki </div> 
+                            <div class="panel-body" id="podatki"> 
+                                <div class="form-group">
+                                  <label class="change-font"> Št. zdravstvenega zavarovanja: </label>
+                                  <input type="text" class="form-control" id="st_kartice">
+                                </div>
+                                <div class="form-group">
+                                  <label class="change-font"> E-mail: </label>
+                                  <input type="text" class="form-control" id="email">
+                                </div>
+                                <div class="form-group">
+                                  <label class="change-font"> Telefon: </label>
+                                  <input type="text" class="form-control" id="tel_st">
+                                </div>
+                            </div> 
                         </div>
+                        
+                        <button type="button" class="btn btn-primary"> Naroči se! </button>
                     </div>
                     
-                    <h4>Željen datum</h4>
-                    <div id="razpolozljivi-datumi">
-                        <div class="datum">
-                            <p class="change-font">čimprej</p>
-                        </div> 
-                        <div class="datum">
-                            <p class="change-font">naslednji teden</p>
-                        </div>
-                        <div class="datum">
-                            <p class="change-font">naslednji mesec</p>
-                        </div>
-                    </div>
-    	            
                 </div>
                 
-                <div class="desni-del-pacient col-md-6">
-                    <div class="panel panel-info odmik"> 
-                        <div class="panel-heading"> Opišite težave </div> 
-                        <div class="panel-body" id="tezave"> 
-                            <textarea class="form-control" rows="5" id="opis_tezav"></textarea>
-                        </div> 
-                    </div>
-                    
-                    <div class="panel panel-info odmik"> 
-                        <div class="panel-heading"> Vaši podatki </div> 
-                        <div class="panel-body" id="podatki"> 
-                            <div class="form-group">
-                              <label> Št. zdravstvenega zavarovanja: </label>
-                              <input type="text" class="form-control" id="st_kartice">
-                            </div>
-                            <div class="form-group">
-                              <label> E-mail: </label>
-                              <input type="text" class="form-control" id="email">
-                            </div>
-                            <div class="form-group">
-                              <label> Telefon: </label>
-                              <input type="text" class="form-control" id="tel_st">
-                            </div>
-                        </div> 
-                    </div>
-                    
-                    <button type="button" class="btn btn-primary"> Naroči se! </button>
-                </div>
+                <input type="hidden" name="poslano" value="1">
                 
-            </div>
-            
+            </form>
         </div>
-    	
+    <?php
+    if($_POST['poslano'] == 1) {
+        ?>
+        $('h2#uspeh').text('dela').css {'border: 5px solid green'};
+        <?php
+    }else echo $_POST['poslano'];
+
+?>
+	
 
     </body>
 
