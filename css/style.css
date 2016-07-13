@@ -51,3 +51,11 @@
 #ura {
     margin-bottom: 15px;
 }
+
+.izbran-termin, .izbrana-ura, .izbran-datum {
+    border: 5px solid red;
+}
+
+.termin, .ura, .datum {
+    background-color: blue;
+}
