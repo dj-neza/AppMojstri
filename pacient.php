@@ -19,7 +19,7 @@
 
     <body>
         <div class="jumbotron ozadje" align="center">
-            <img src="ikona_podstran.png" class="img-rounded" width="158" height="80">
+            <img src="ikona_podstran.png" class="img-rounded" width="140" height="70"><br>
             <h1 class="change-font-barva">NAROČI SE!</h1>
           </div>
         <div class="container">
@@ -29,7 +29,7 @@
                 <div class="levi-del-pacient col-md-6" style="text-align: center;">
                     <select class="form-control input-mini drop_down" id="zd">
                         <option value="" disabled selected> Vaš zdravsteni dom </option>
-                        <option id="zd1" value="bezigrad">ZD Ljubljana - enota Bežigrad</option>
+                        <option id="zd1" value="bezigrad" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Bežigrad</option>
                         <option id="zd2" value="moste">ZD Ljubljana - enota Moste-Polje</option>
                         <option id="zd3" value="sentvid">ZD Ljubljana - enota Šentvid </option>
                      </select>
@@ -37,14 +37,13 @@
                      <select class="form-control input-mini drop_down" id="zd_zdravnik">
                         <option value="" disabled selected> Zdravnik </option>
                         <option id="zdr1" value="bezigrad1"> dr. med. Mojca Horvat </option>
-                        <option id="zdr2" value="bezigrad2"> dr. med. Janez Novak </option>
+                        <option id="zdr2" value="bezigrad2" > dr. med. Janez Novak </option>
                         <option id="zdr3" value="sentvid1"> dr. med. Peter Merše </option>
                         <option id="zdr4" value="sentvid2"> dr. med. Janja Zupančič </option>
                         <option id="zdr5" value="moste1"> dr. med. Jernej Novak </option>
                         <option id="zdr6" value="moste2"> dr. med. Ana Horvat </option>
                      </select>
                     
-                    <h3>IZBIRA TERMINA</h3>
                     <h4>Razpoložljivi termini</h4>
                     <div id="razpolozljivi-termini">
                         <div class="termin">
@@ -87,8 +86,6 @@
                 </div>
                 
                 <div class="desni-del-pacient col-md-6">
-                    
-                    <p>Izbrani termini:</p>
     	
                 	<p>Opišite problem:</p>
                 	<input type="text" name="opis-problema">
