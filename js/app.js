@@ -100,30 +100,24 @@ var main = function() {
                 {
                     title  : 'Pregled',
                     start  : '2016-07-11T11:20:00',
-                    end    : '2016-07-11T11:40:00',
+                    end    : '2016-07-11T11:50:00',
                     allDay: false
                 },
                 {
                     title  : 'Pregled',
-                    start  : '2016-07-11T11:50:00',
-                    end    : '2016-07-11T12:00:00',
+                    start  : '2016-07-11T12:00:00',
+                    end    : '2016-07-11T12:30:00',
                     allDay: false
                 },
                 {
                     title  : 'Pregled',
-                    start  : '2016-07-11T12:30:00',
-                    end    : '2016-07-11T12:50:00',
+                    start  : '2016-07-11T12:40:00',
+                    end    : '2016-07-11T13:10:00',
                     allDay: false
                 },
                 {
                     title  : 'Pregled',
-                    start  : '2016-07-11T13:00:00',
-                    end    : '2016-07-11T13:20:00',
-                    allDay: false
-                },
-                {
-                    title  : 'Pregled',
-                    start  : '2016-07-11T13:30:00',
+                    start  : '2016-07-11T13:20:00',
                     end    : '2016-07-11T13:50:00',
                     allDay: false
                 },
@@ -136,13 +130,13 @@ var main = function() {
                 {
                     title  : 'Pregled',
                     start  : '2016-07-13T14:10:00',
-                    end    : '2016-07-13T14:30:00',
+                    end    : '2016-07-13T14:40:00',
                     allDay: false
                 },
                 {
                     title  : 'Pregled',
                     start  : '2016-07-13T14:50:00',
-                    end    : '2016-07-13T15:10:00',
+                    end    : '2016-07-13T15:20:00',
                     allDay: false
                     
                 },
@@ -155,25 +149,13 @@ var main = function() {
                 {
                     title  : 'Pregled',
                     start  : '2016-07-13T17:20:00',
-                    end    : '2016-07-13T17:40:00',
+                    end    : '2016-07-13T17:50:00',
                     allDay: false
                 },
                 {
                     title  : 'Pregled',
-                    start  : '2016-07-13T17:50:00',
-                    end    : '2016-07-13T18:00:00',
-                    allDay: false
-                },
-                {
-                    title  : 'Pregled',
-                    start  : '2016-07-13T18:30:00',
-                    end    : '2016-07-13T18:50:00',
-                    allDay: false
-                },
-                {
-                    title  : 'Pregled',
-                    start  : '2016-07-13T12:10:00',
-                    end    : '2016-07-13T12:30:00',
+                    start  : '2016-07-13T18:00:00',
+                    end    : '2016-07-13T18:30:00',
                     allDay: false
                 },
                 {
