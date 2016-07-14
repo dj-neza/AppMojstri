@@ -17,12 +17,11 @@ $priimek = 'Novak';
 $mail = 'janez@heci.si';
 $razlog = 'dlesen se mi je vnela';
 $datum = '2016-07-19';
-$datumSI = DateTime::createFromFormat('Y-m-d', $datum);
-$datumSI = $datumSI->format('d.m.Y');
+$datumSI = $datum;
 $ura = '11:30:00';
 $uraMin = substr($ura, 0, strlen($ura) -3);
 
-echo '<script>let narocila = [';
+echo '<script>var narocila = [';
 while($i < $num_rows-1) {
 	if (/*$stmt->fetch()*/true) {
 		echo '{ime:"' . $ime . '",' .

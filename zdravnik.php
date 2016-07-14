@@ -1,6 +1,4 @@
-<?php
-    require_once('getdatafromdb.inc.php');
-?>
+
 
 <!DOCTYPE html>
 <html>
@@ -10,6 +8,10 @@
         <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
         <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        <?php
+            require_once('getdatafromdb.inc.php');
+        ?>
     </head>
 
     <body>

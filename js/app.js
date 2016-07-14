@@ -13,7 +13,7 @@ var main = function() {
         maxTime: '19:00:00'
     });
 
-    prikaz_marocil(narocila);
+    prikaz_narocil(narocila);
     
     $(".potrdi").click(function(){
         alert("Pošlji mail.");
@@ -75,7 +75,7 @@ var main = function() {
     });
     
 
-    var zdravniki = []; // tukaj morajo biti zdravniki kot objekti s svojimi id-ji, id-ji ustanov kjer delajo, imeni...
+    //var zdravniki = []; // tukaj morajo biti zdravniki kot objekti s svojimi id-ji, id-ji ustanov kjer delajo, imeni...
 
     // val od optionov od selecta za izbrat ustanovo mora biti id ustanove
     
@@ -85,17 +85,21 @@ var main = function() {
         for (var i = 0; i < zdravniki.length; i++) {
             if (zdravniki[i].idUstanova == value) {
                 var naziv; // to nekak sestavis iz imena, priimka
-                $('#zd_zdravnik').append("<option val='" + zdravniki[i].idZdravnik + "'>" + naziv + "</option>");
+                $('#zd_zdravnik').append("<option value='" + zdravniki[i].idZdravnik + "'>" + naziv + "</option>");
             }
         }
     });
     
+    
+    
+    var term = vrni3termine(termini, zdravniki, ustanove);
+    prikazi_termine(term);
 
 };
 
 $(document).ready(main);
 
-
+/*
 var narocila = [
     {
         ime: 'Marko',
@@ -122,9 +126,11 @@ var narocila = [
         ura: '17:00'
     }
 ];
+*/
 
+alert(narocila);
 
-function prikaz_marocil (narocila) {
+function prikaz_narocil (narocila) {
     for (var i=0; i<narocila.length; i++) {
         var ime_priimek = narocila[i].ime + " " + narocila[i].priimek;
         var mail = narocila[i].mail;
@@ -155,3 +161,135 @@ function prikaz_marocil (narocila) {
 }
 
 
+function vrni3termine(termini, zdr, ust) {
+    var cas_v_dnevu = [0, 0, 0];
+    var kdaj_datum = 0;
+    var dodatne_moznosti = false;
+    
+    var termini_3 = [];
+    
+    $('#razpolozljivi-termini').find('div').each(function(){
+        if($(this).hasClass("izbran-termin")) {
+            cas_v_dnevu[parseInt($(this).id)] = 1;            
+        }
+    });
+    
+    $('#razpolozljivi-datumi').find('div').each(function(){
+        if($(this).hasClass("izbran-datum")) {
+             if (parseInt($(this).id) == 10) {
+                 kdaj_datum = 1;
+             } 
+             else if (parseInt($(this).id) == 11) {
+                 kdaj_datum = 2;
+             }  
+             else if (parseInt($(this).id) == 12) {
+                 kdaj_datum = 3;
+             }  
+        }
+    });
+    
+    var id_izbranZdravnik = $('#zd_zdravnik').find(':selected').val();
+    
+    
+    for (var i=0; i<termini.length; i++) {
+        if(termini[i].idZdravnik == id_izbranZdravnik) {
+            for (var j=0; j<3; j++) {
+                if (cas_v_dnevu[j] != 0 || kdaj_datum != 0) {
+                    dodatne_moznosti = true;
+                }
+            }
+            
+            if(!dodatne_moznosti) {
+                termini_3.append(termini[i]);
+            }
+            else {
+                var datum_termina = new Date(termini[i].datum);
+                var ura_zacetka = parseInt(termini[i].zacetek.split(':')[0]);
+                
+                if (kdaj_datum == 1) {
+                    if (ura_zacetka < 11 && cas_v_dnevu[0] == 1) {
+                        termini_3.append(termini[i]);
+                    } 
+                    else if (ura_zacetka < 15 && cas_v_dnevu[1] == 1) {
+                        termini_3.append(termini[i]);
+                    }
+                    else if (ura_zacetka < 19 && cas_v_dnevu[2] == 1) {
+                        termini_3.append(termini[i]);
+                    }
+                }
+                
+                else if (kdaj_datum == 2) {
+                    var danes = new Date();
+                    var razlika = danes - datum_termina;
+                    razlika = Math.floor(razlika / (1000*60*60*24));
+                    
+                    if (razlika > 7 && razlika < 31) {
+                        if (ura_zacetka < 11 && cas_v_dnevu[0] == 1) {
+                            termini_3.append(termini[i]);
+                        } 
+                        else if (ura_zacetka < 15 && cas_v_dnevu[1] == 1) {
+                            termini_3.append(termini[i]);
+                        }
+                        else if (ura_zacetka < 19 && cas_v_dnevu[2] == 1) {
+                            termini_3.append(termini[i]);
+                        }
+                    }
+                }
+                
+                else if (kdaj_datum == 3) {
+                    var danes = new Date();
+                    var razlika = danes - datum_termina;
+                    razlika = Math.floor(razlika / (1000*60*60*24));
+                    
+                    if (razlika > 30) {
+                        if (ura_zacetka < 11 && cas_v_dnevu[0] == 1) {
+                            termini_3.append(termini[i]);
+                        } 
+                        else if (ura_zacetka < 15 && cas_v_dnevu[1] == 1) {
+                            termini_3.append(termini[i]);
+                        }
+                        else if (ura_zacetka < 19 && cas_v_dnevu[2] == 1) {
+                            termini_3.append(termini[i]);
+                        }
+                    }
+                }
+            }
+        }
+        
+        if(termini_3.length == 3) {
+            break;
+        }
+    }
+    
+    
+    for(var i=0; i<termini_3.length; i++) {
+        var datum2 = new Date(termini_3[i].datum);
+        termini_3[i].datum = datum2.toLocaleDateString();
+        termini_3[i].zacetek = datum2.toLocaleTimeString();
+    }
+   
+    return termini_3;
+}
+
+
+function prikazi_termine(termini3) {
+    for (var i=0; i<termini3.length; i++) {
+        var u = termini3[i].zacetek;
+        
+        var d = new Date(termini3[i].datum);
+        var weekday = new Array(7);
+        weekday[0] = "NED";
+        weekday[1] = "PON";
+        weekday[2] = "TOR";
+        weekday[3] = "SRE";
+        weekday[4] = "ČET";
+        weekday[5] = "PET";
+        weekday[6] = "SOB";
+        var dan = weekday[d.getDay()];
+        
+        var kdaj = dan + ', ' + termini3[i].datum + ' ob ' + u;
+        
+        $('#razpolozljivi-termini').append('<div class="panel panel-info odmik termin change-font-barva">' + kdaj + '</div>');
+    }
+    
+}

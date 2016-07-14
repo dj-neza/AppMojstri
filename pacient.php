@@ -9,6 +9,10 @@
         <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
         <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        <?php
+            require_once('getdatafromdb.inc.php');
+        ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -25,7 +29,6 @@
         <div class="container">
             <form name="pacient_form" method="post" action="pacient.php">    
             
-                
                 <div class="panel panel-success" id="uspeh" style="display: none; text-align: center">
                   <div class="panel-heading change-font">Naročilo je bilo uspešno poslano.</div>
                 </div>
@@ -35,19 +38,21 @@
                 <div class="levi-del-pacient col-md-6" style="text-align: center;">
                     <select class="form-control input-mini drop_down" id="zd">
                         <option value="" disabled selected style=" font-family: 'Trebuchet MS'"> Vaš zdravsteni dom </option>
-                        <option id="zd1" value="bezigrad" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Bežigrad</option>
-                        <option id="zd2" value="moste" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Moste-Polje</option>
-                        <option id="zd3" value="sentvid" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Šentvid </option>
+                        <option id="1" value="bezigrad" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Bežigrad</option>
+                        <option id="2" value="moste" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Moste-Polje</option>
+                        <option id="3" value="sentvid" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Šentvid </option>
                      </select>
                   
                      <select class="form-control input-mini drop_down" id="zd_zdravnik">
                         <option value="" disabled selected style=" font-family: 'Trebuchet MS'"> Zdravnik </option>
+                        <!--
                         <option id="zdr1" value="bezigrad1" style=" font-family: 'Trebuchet MS'"> dr. med. Mojca Horvat </option>
                         <option id="zdr2" value="bezigrad2" style=" font-family: 'Trebuchet MS'"> dr. med. Janez Novak </option>
                         <option id="zdr3" value="sentvid1" style=" font-family: 'Trebuchet MS'"> dr. med. Peter Merše </option>
                         <option id="zdr4" value="sentvid2" style=" font-family: 'Trebuchet MS'"> dr. med. Janja Zupančič </option>
                         <option id="zdr5" value="moste1" style=" font-family: 'Trebuchet MS'"> dr. med. Jernej Novak </option>
                         <option id="zdr6" value="moste2" style=" font-family: 'Trebuchet MS'"> dr. med. Ana Horvat </option>
+                        -->
                      </select>
                     
                     <div class="panel panel-info odmik"> 
@@ -59,49 +64,35 @@
                                 <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
                             </button>
                             <div class="filter dont-display">
-                                <label class="change-font" style="display: block;">Želena ura pregleda: </br> </label>
-                                <div class="btn-group" data-toggle="buttons">
-                                  <label class="btn btn-primary panel panel-info odmik ura change-font-barva">
-                                    <input type="checkbox" autocomplete="off"> 7h - 11h
-                                  </label>
-                                  <label class="btn btn-primary panel panel-info odmik ura change-font-barva">
-                                    <input type="checkbox" autocomplete="off"> 11h - 15h
-                                  </label>
-                                  <label class="btn btn-primary panel panel-info odmik ura change-font-barva">
-                                    <input type="checkbox" autocomplete="off"> 15h - 19h
-                                  </label>
+                                
+                                <label class="change-font">Želena ura pregleda</label>
+                                <div id="razpolozljive-ure">
+                                    <div class="panel panel-info odmik ura change-font-barva" id="0">7:00 - 10:59</div>
+                                    <div class="panel panel-info odmik ura change-font-barva" id="1">11:00 - 14:59</div>
+                                    <div class="panel panel-info odmik ura change-font-barva" id="2">15:00 - 19:00</div>
                                 </div>
-                                
-                                    
-                                <label class="change-font" style="display: block;">Želen datum:</label>
-                                
-                                <div class="btn-group" data-toggle="buttons">
-                                  <label class="btn btn-primary">
-                                    <input type="radio" name="options" id="option1" autocomplete="off" checked> čim prej
-                                  </label>
-                                  <label class="btn btn-primary">
-                                    <input type="radio" name="options" id="option2" autocomplete="off"> naslednji teden
-                                  </label>
-                                  <label class="btn btn-primary">
-                                    <input type="radio" name="options" id="option3" autocomplete="off"> naslednji mesec
-                                  </label>
+                               
+                                <label class="change-font">Želen datum</label>
+                                <div id="razpolozljivi-datumi">
+                                    <div class="panel panel-info odmik datum change-font-barva" id="10">čimprej</div>
+                                    <div class="panel panel-info odmik datum change-font-barva" id="11">naslednji teden</div>
+                                    <div class="panel panel-info odmik datum change-font-barva" id="12">naslednji mesec</div>
                                 </div>
                                 
                                 
-                                    <!--
-                                    <div class="btn-group" id="razpolozljivi-datumi"> 
-                                        <button type="button" class="panel panel-info odmik datum change-font-barva"> čim prej </button>
-                                        <button type="button" class="panel panel-info odmik datum change-font-barva"> naslednji teden </button>
-                                        <button type="button" class="panel panel-info odmik datum change-font-barva"> naslednji mesec </button>
-                                    </div>
-                                    -->
                                 
-                            </div><br></br>
+                            </div>
                             
+                            <!--
                             <div id="razpolozljivi-termini">
                                 <div class="panel panel-info odmik termin change-font-barva">pon, 18.7.2016 13:00</div> 
                                 <div class="panel panel-info odmik termin change-font-barva">pon, 18.7.2016 17:30</div>
                                 <div class="panel panel-info odmik termin change-font-barva">tor, 19.7.2016 7:20</div>
+                            </div>
+                            -->
+                            
+                            <div id="razpolozljivi-termini">
+                                
                             </div>
                         
                         </div>
