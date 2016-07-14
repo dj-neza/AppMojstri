@@ -1,3 +1,6 @@
+<?php
+	include_once('getUZTData.inc.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
