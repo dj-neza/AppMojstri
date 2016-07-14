@@ -79,22 +79,25 @@ var main = function() {
 
     // val od optionov od selecta za izbrat ustanovo mora biti id ustanove
     
+    pokazi_zd(ustanove);  
+ 
     $('#zd').change(function() {
         var value = $(this).find(':selected').val();
         $('#zd_zdravnik').empty();
         for (var i = 0; i < zdravniki.length; i++) {
             if (zdravniki[i].idUstanova == value) {
-                var naziv; // to nekak sestavis iz imena, priimka
+		var naziv =  zdravniki[i].ime + " " + zdravniki[i].priimek + ", dr. med., spec. splošne medicine"; 
                 $('#zd_zdravnik').append("<option value='" + zdravniki[i].idZdravnik + "'>" + naziv + "</option>");
             }
         }
     });
     
     
-    
-    var term = vrni3termine(termini, zdravniki, ustanove);
-    prikazi_termine(term);
-
+       $('#zd_zdravnik').change(function() {
+ 
+	    var term = vrni3termine(termini, zdravniki, ustanove);
+	    prikazi_termine(term);
+	});
 };
 
 $(document).ready(main);
@@ -167,22 +170,22 @@ function vrni3termine(termini, zdr, ust) {
     var dodatne_moznosti = false;
     
     var termini_3 = [];
-    
-    $('#razpolozljivi-termini').find('div').each(function(){
-        if($(this).hasClass("izbran-termin")) {
-            cas_v_dnevu[parseInt($(this).id)] = 1;            
+    $('#razpolozljivi-termini').empty(); 
+    $('#razpolozljive-ure').find('div').each(function(){
+        if($(this).hasClass("izbrana-ura")) {
+            cas_v_dnevu[parseInt($(this).attr('id'))] = 1;            
         }
     });
     
     $('#razpolozljivi-datumi').find('div').each(function(){
         if($(this).hasClass("izbran-datum")) {
-             if (parseInt($(this).id) == 10) {
+             if (parseInt($(this).attr('id')) == 10) {
                  kdaj_datum = 1;
              } 
-             else if (parseInt($(this).id) == 11) {
+             else if (parseInt($(this).attr('id')) == 11) {
                  kdaj_datum = 2;
              }  
-             else if (parseInt($(this).id) == 12) {
+             else if (parseInt($(this).attr('id')) == 12) {
                  kdaj_datum = 3;
              }  
         }
@@ -198,23 +201,27 @@ function vrni3termine(termini, zdr, ust) {
                     dodatne_moznosti = true;
                 }
             }
-            
             if(!dodatne_moznosti) {
-                termini_3.append(termini[i]);
+                termini_3.push(termini[i]);
             }
             else {
-                var datum_termina = new Date(termini[i].datum);
+		var y = termini[i].datum.split('-')[0];
+		var m = termini[i].datum.split('-')[1] - 1;
+		var d = termini[i].datum.split('-')[2];
+
+                var datum_termina = new Date(y,m,d,0,0,0,0);
                 var ura_zacetka = parseInt(termini[i].zacetek.split(':')[0]);
-                
+           	alert(ura_zacetka + ' aaa ' + JSON.stringify(termini[i]));
+ 
                 if (kdaj_datum == 1) {
                     if (ura_zacetka < 11 && cas_v_dnevu[0] == 1) {
-                        termini_3.append(termini[i]);
+                        termini_3.push(termini[i]);
                     } 
-                    else if (ura_zacetka < 15 && cas_v_dnevu[1] == 1) {
-                        termini_3.append(termini[i]);
+                    else if (ura_zacetka < 15 && ura_zacetka >= 11 && cas_v_dnevu[1] == 1) {
+                        termini_3.push(termini[i]);
                     }
-                    else if (ura_zacetka < 19 && cas_v_dnevu[2] == 1) {
-                        termini_3.append(termini[i]);
+                    else if (ura_zacetka < 19 && ura_zacetka >= 15 && cas_v_dnevu[2] == 1) {
+                        termini_3.push(termini[i]);
                     }
                 }
                 
@@ -225,31 +232,31 @@ function vrni3termine(termini, zdr, ust) {
                     
                     if (razlika > 7 && razlika < 31) {
                         if (ura_zacetka < 11 && cas_v_dnevu[0] == 1) {
-                            termini_3.append(termini[i]);
+                            termini_3.push(termini[i]);
                         } 
-                        else if (ura_zacetka < 15 && cas_v_dnevu[1] == 1) {
-                            termini_3.append(termini[i]);
+                        else if (ura_zacetka < 15 && ura_zacetka >= 11 && cas_v_dnevu[1] == 1) {
+                            termini_3.push(termini[i]);
                         }
-                        else if (ura_zacetka < 19 && cas_v_dnevu[2] == 1) {
-                            termini_3.append(termini[i]);
+                        else if (ura_zacetka < 19 && ura_zacetka >= 15 && cas_v_dnevu[2] == 1) {
+                            termini_3.push(termini[i]);
                         }
                     }
                 }
                 
                 else if (kdaj_datum == 3) {
                     var danes = new Date();
-                    var razlika = danes - datum_termina;
+                    var razlika = datum_termina - danes;
                     razlika = Math.floor(razlika / (1000*60*60*24));
-                    
+                   alert(razlika + 'razlika'); 
                     if (razlika > 30) {
                         if (ura_zacetka < 11 && cas_v_dnevu[0] == 1) {
-                            termini_3.append(termini[i]);
+                            termini_3.push(termini[i]);
                         } 
                         else if (ura_zacetka < 15 && cas_v_dnevu[1] == 1) {
-                            termini_3.append(termini[i]);
+                            termini_3.push(termini[i]);
                         }
                         else if (ura_zacetka < 19 && cas_v_dnevu[2] == 1) {
-                            termini_3.append(termini[i]);
+                            termini_3.push(termini[i]);
                         }
                     }
                 }
@@ -261,13 +268,13 @@ function vrni3termine(termini, zdr, ust) {
         }
     }
     
-    
+   /* 
     for(var i=0; i<termini_3.length; i++) {
         var datum2 = new Date(termini_3[i].datum);
         termini_3[i].datum = datum2.toLocaleDateString();
         termini_3[i].zacetek = datum2.toLocaleTimeString();
     }
-   
+ */  
     return termini_3;
 }
 
@@ -288,8 +295,13 @@ function prikazi_termine(termini3) {
         var dan = weekday[d.getDay()];
         
         var kdaj = dan + ', ' + termini3[i].datum + ' ob ' + u;
-        
         $('#razpolozljivi-termini').append('<div class="panel panel-info odmik termin change-font-barva">' + kdaj + '</div>');
     }
     
+}
+
+function pokazi_zd(ustanove) {
+	for (var i = 0; i < ustanove.length; i++) {
+        	$('#zd').append('<option value="' + ustanove[i].idUstanova  + '" style=" font-family: \'Trebuchet MS\'">' + ustanove[i].naziv  + '</option>');
+	}
 }
