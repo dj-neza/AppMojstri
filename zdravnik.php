@@ -46,27 +46,28 @@
         
         </div>
         
-        <div class="container">
+        <div class="container odmik">
+            
+            <button type="button" class="btn btn-default pull-right dodatni-gumb">Dodaj odsotnost</button>
+            <button type="button" class="btn btn-default pull-right dodatni-gumb">Spremeni delavnik</button>
         
-          <div id="wrap" class="panel odmik">
+            <div id="wrap" class="panel">
             
-            <div id='calendar' class="koledar-zdravnik"></div>
+                <div id='calendar' class="koledar-zdravnik"></div>
             
-            <div style='clear:both'></div>
+                <div style='clear:both'></div>
             
-          </div>
-          
-       
-        
-        <div class="panel panel-default" id="noga">
-            <div class="panel-heading">
-                <div class="row">
-                  <div class="col-md-10">
-                      <h5>&copy AppMojstri</h5>
-                  </div>
-                </div>  
             </div>
-        </div>
+        
+            <div class="panel panel-default" id="noga">
+                <div class="panel-heading">
+                    <div class="row">
+                    <div class="col-md-10">
+                        <h5>&copy AppMojstri</h5>
+                    </div>
+                    </div>  
+                </div>
+            </div>
         
          </div>
         

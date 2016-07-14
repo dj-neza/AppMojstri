@@ -113,7 +113,7 @@
                 </div>
                 
                 <div style="text-align: center;">
-                    <input type="submit" class="btn btn-primary" value="Naroči se!">
+                    <input type="submit" class="btn btn-success" value="Naroči se!">
                 </div>
                 
                 <input type="hidden" name="poslano" value="1">

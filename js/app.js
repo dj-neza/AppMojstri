@@ -191,22 +191,6 @@ var main = function() {
 
     prikaz_marocil(narocila);
     
-    $(".potrdi").click(function(){
-        alert("Pošlji mail.");
-        
-        if ($('#minute').val().length == 0) {
-            $('.opozorilo').show(300);
-        }
-        else {
-            $('.opozorilo').hide();
-        }
-    });
-    
-    $(".zavrni").click(function(){
-        alert("Ponudi nove možnosti.");
-    });
-    
-    
     // za design pacient.php
     
     // selectanje razpolozljivega termina
@@ -266,6 +250,11 @@ var main = function() {
         }
     });
     
+    $(".gumbic").on("click", function() {
+        var idGumba = "#" + $(this).attr("id");
+        $(idGumba).css("display", "none");
+    });
+    
 
 };
 
@@ -320,7 +309,7 @@ function prikaz_marocil (narocila) {
         }
         $('#narocilnice').append(
         '<div class="col-md-6"> \
-        <div class="panel panel-info odmik"> \
+        <div id="' + i + '" class="panel panel-info odmik"> \
             <div class="panel-heading">'+ ime_priimek +'</div> \
             <div class="panel-body" id="podrobno"> \
                 <p class="change-font">'+ razlog +'</p> \
@@ -330,13 +319,12 @@ function prikaz_marocil (narocila) {
                     <label class="change-font"> Predviden čas pregleda v minutah: </label> \
                     <input type="text" class="form-control" id="minute" style="width: 60px; display: inline;"> \
                 </div> \
-                <button class="btn btn-primary btn-md potrdi"> \
+                <button id="' + i + '" class="btn btn-success btn-md potrdi gumbic"> \
                   <span class="glyphicon glyphicon-ok"></span> Potrdi \
                 </button> \
-                <button class="btn btn-danger btn-md zavrni" style="display: inline;"> \
+                <button id="' + i + '" class="btn btn-danger btn-md zavrni gumbic" style="display: inline;"> \
                   <span class="glyphicon glyphicon-remove"></span> Zavrni \
                 </button> \
-                <p class="text-danger change-font opozorilo" style="display: none;"> Izpolnite pričakovano trajanje pregleda. </p> \
              </div> \
         </div></div>');
         if (i%2 == 0) {
