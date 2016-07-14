@@ -131,7 +131,7 @@ var narocila = [
 ];
 */
 
-alert(narocila);
+//alert(narocila);
 
 function prikaz_narocil (narocila) {
     for (var i=0; i<narocila.length; i++) {
@@ -211,7 +211,7 @@ function vrni3termine(termini, zdr, ust) {
 
                 var datum_termina = new Date(y,m,d,0,0,0,0);
                 var ura_zacetka = parseInt(termini[i].zacetek.split(':')[0]);
-           	alert(ura_zacetka + ' aaa ' + JSON.stringify(termini[i]));
+           	//alert(ura_zacetka + ' aaa ' + JSON.stringify(termini[i]));
  
                 if (kdaj_datum == 1) {
                     if (ura_zacetka < 11 && cas_v_dnevu[0] == 1) {
@@ -247,7 +247,6 @@ function vrni3termine(termini, zdr, ust) {
                     var danes = new Date();
                     var razlika = datum_termina - danes;
                     razlika = Math.floor(razlika / (1000*60*60*24));
-                   alert(razlika + 'razlika'); 
                     if (razlika > 30) {
                         if (ura_zacetka < 11 && cas_v_dnevu[0] == 1) {
                             termini_3.push(termini[i]);
