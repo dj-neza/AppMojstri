@@ -41,9 +41,9 @@
                 <div class="levi-del-pacient col-md-6" style="text-align: center;">
                     <select class="form-control input-mini drop_down" id="zd">
                         <option value="" disabled selected style=" font-family: 'Trebuchet MS'"> Vaš zdravsteni dom </option>
-                        <option id="1" value="bezigrad" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Bežigrad</option>
+                        <!--option id="1" value="bezigrad" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Bežigrad</option>
                         <option id="2" value="moste" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Moste-Polje</option>
-                        <option id="3" value="sentvid" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Šentvid </option>
+                        <option id="3" value="sentvid" style=" font-family: 'Trebuchet MS'">ZD Ljubljana - enota Šentvid </option-->
                      </select>
                   
                      <select class="form-control input-mini drop_down" id="zd_zdravnik">
@@ -60,7 +60,7 @@
                     
                     <div class="panel panel-info odmik"> 
                         <div class="panel-heading change-font">Predlagani termini</div> 
-                        <div class="panel-body" id="tezave"> 
+                        <div class="panel-body" id="tezave" onclick="prikazi_termine(vrni3termine(termini, zdravniki, ustanove))"> 
                         
                             <button type="button" class="btn btn-primary dodatne-moznosti">
                                 Dodatne možnosti iskanja termina<span class="presledek"></span>
