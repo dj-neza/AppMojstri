@@ -176,13 +176,16 @@ var main = function() {
     // za design pacient.php
     
     // selectanje razpolozljivega termina
-    $(".termin").on("click", function() {
-        $('#razpolozljivi-termini').find('div').each(function(){
-            $(this).removeClass("izbran-termin");
-        });
-        $(this).addClass("izbran-termin");
+
+    $(document).on("click", ".termin", function() {
+	for (var i = 1; i < $('#razpolozljivi-termini div').length; i++) {
+        	if ($('#najtermin' + i).hasClass("izbran-termin"))
+                	$('#najtermin' + i).removeClass("izbran-termin");
+	}
+	$('#' + event.target.id).addClass("izbran-termin ");
     });
-    
+
+ 
     // selectanje ure pregleda
     $(".ura").on("click", function() {
         if ($(this).hasClass("izbrana-ura")) {
@@ -248,7 +251,6 @@ var main = function() {
 
 };
 
-$(document).ready(main);
 
 /*
 var narocila = [
@@ -413,10 +415,10 @@ function vrni3termine(termini, zdr, ust) {
                         if (ura_zacetka < 11 && cas_v_dnevu[0] == 1) {
                             termini_3.push(termini[i]);
                         } 
-                        else if (ura_zacetka < 15 && cas_v_dnevu[1] == 1) {
+                        else if (ura_zacetka < 15 && ura_zacetka >= 11 && cas_v_dnevu[1] == 1) {
                             termini_3.push(termini[i]);
                         }
-                        else if (ura_zacetka < 19 && cas_v_dnevu[2] == 1) {
+                        else if (ura_zacetka < 19 && ura_zacetka >= 15 && cas_v_dnevu[2] == 1) {
                             termini_3.push(termini[i]);
                         }
                     }
@@ -456,7 +458,7 @@ function prikazi_termine(termini3) {
         var dan = weekday[d.getDay()];
         
         var kdaj = dan + ', ' + termini3[i].datum + ' ob ' + u;
-        $('#razpolozljivi-termini').append('<div class="panel panel-info odmik termin change-font-barva">' + kdaj + '</div>');
+        $('#razpolozljivi-termini').append('<div id="najtermin' + (i+1) + '" class="panel panel-info odmik termin change-font-barva">' + kdaj + '</div>');
     }
     
 }
@@ -466,3 +468,5 @@ function pokazi_zd(ustanove) {
         	$('#zd').append('<option value="' + ustanove[i].idUstanova  + '" style=" font-family: \'Trebuchet MS\'">' + ustanove[i].naziv  + '</option>');
 	}
 }
+
+$(document).ready(main);
