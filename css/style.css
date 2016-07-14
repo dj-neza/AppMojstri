@@ -58,7 +58,7 @@
 }
 
 .zavrni {
-    margin-left: 30px;
+    margin-left: 15px;
 }
 
 .drop_down {
@@ -111,6 +111,13 @@
     cursor: pointer;
     background-color: #a1d6e2;
     height: 30px;
+}
+
+.dodatni-gumb {
+    /*background-color: #dda299;*/
+    color: #f76346;
+    border-color: #f76346;
+    margin-left: 20px;
 }
 
 /* fullcalendar design */
