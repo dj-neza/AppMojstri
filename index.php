@@ -36,11 +36,11 @@
           </div>
           
           
+          
           <div class="panel panel-default" id="noga">
-            <div class="panel-heading">
                 <div class="row">
                   <div class="col-md-10">
-                      <h5>&copy AppMojstri</h5>
+                      <h5 style="margin-left: 20px;">&copy App Mojstri </h5>
                   </div>
                   <div class="col-md-1">
                       <a target="_blank" href="https://www.facebook.com/drdatum/"><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png" id="fb"</a>
@@ -48,9 +48,8 @@
                   <div class="col-md-1">
                       <a target="_blank" href="https://twitter.com/dr_datum"><img alt="follow me on Twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter30x30.png" id="twitter"</a>
                   </div>
-                </div>  
-            </div>
-          </div>
+                </div> 
+        </div>
         </div>
         
         

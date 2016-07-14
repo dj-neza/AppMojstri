@@ -18,7 +18,7 @@
     </head>
 
     <body>
-        <div class="jumbotron ozadje" align="center">
+        <div class="ozadje" align="center">
             <img src="ikona_podstran.png" class="img-rounded" width="140" height="70">
             <h1 class="change-font-barva2">NAROČI SE!</h1>
           </div>
@@ -55,25 +55,25 @@
                         <div class="panel-body" id="tezave"> 
                         
                             <button type="button" class="btn btn-primary dodatne-moznosti">
-                                Dodatne možnosti iskanja termina<span class="presledek"></span>
+                                Prikaži dodatne možnosti iskanja termina<span class="presledek"></span>
                                 <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
                             </button>
                             <div class="filter dont-display">
-                                <label class="change-font">Želena ura pregleda</label>
-                                <div id="razpolozljive-ure">
-                                    <div class="panel panel-info odmik ura change-font-barva">7:00 - 10:59</div> 
-                                    <div class="panel panel-info odmik ura change-font-barva">11:00 - 14:59</div>
-                                    <div class="panel panel-info odmik ura change-font-barva">15:00 - 19:00</div>
+                                <div class="panel panel-info odmik col-md-6">
+                                    <div class="change-font">Želena ura pregleda:</div>
+                                    <div class="panel panel-info odmik ura change-font-barva">7 - 11h</div>
+                                    <div class="panel panel-info odmik ura change-font-barva">11 - 15h</div>
+                                    <div class="panel panel-info odmik ura change-font-barva">15 - 19h</div>
                                 </div>
-                                
-                                <label class="change-font">Želen datum</label>
-                                <div id="razpolozljivi-datumi">
-                                    <div class="panel panel-info odmik datum change-font-barva">čimprej</div> 
+                                <div class="panel panel-info odmik col-md-6">
+                                    <div class="change-font">Želen datum:</div> 
+                                    <div class="panel panel-info odmik datum change-font-barva">čimprej</div>
                                     <div class="panel panel-info odmik datum change-font-barva">naslednji teden</div>
                                     <div class="panel panel-info odmik datum change-font-barva">naslednji mesec</div>
                                 </div>
-                            </div><br></br>
-                            
+                                <br></br>
+                                <label class="change-font">Termini</label>
+                            </div>
                             <div id="razpolozljivi-termini">
                                 <div class="panel panel-info odmik termin change-font-barva">pon, 18.7.2016 13:00</div> 
                                 <div class="panel panel-info odmik termin change-font-barva">pon, 18.7.2016 17:30</div>
@@ -119,6 +119,14 @@
                 <input type="hidden" name="poslano" value="1">
         
             </form>
+        </div>
+        
+        <div class="panel panel-default" id="noga">
+                <div class="row">
+                  <div class="col-md-10">
+                      <h5 style="margin-left: 20px;">&copy App Mojstri </h5>
+                  </div>
+                </div> 
         </div>
             
         

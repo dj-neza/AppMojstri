@@ -243,7 +243,7 @@ var main = function() {
     $(".dodatne-moznosti").on("click", function() {
         if ($(".filter").hasClass("dont-display")) {
             $(".filter").removeClass("dont-display");
-            $(".dodatne-moznosti").html('Skrij dodatne možnosti iskanja termina<span class="presledek"></span> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>');
+            $(".dodatne-moznosti").html('Skrij dodatne možnosti iskanja termina<span class="presledek"></span> <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>');
         } else {
             $(".filter").addClass("dont-display");
             $(".dodatne-moznosti").html('Prikaži dodatne možnosti iskanja termina<span class="presledek"></span> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>');

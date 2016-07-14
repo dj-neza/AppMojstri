@@ -59,13 +59,11 @@
        
         
         <div class="panel panel-default" id="noga">
-            <div class="panel-heading">
                 <div class="row">
                   <div class="col-md-10">
-                      <h5>&copy AppMojstri</h5>
+                      <h5 style="margin-left: 20px;">&copy App Mojstri </h5>
                   </div>
-                </div>  
-            </div>
+                </div> 
         </div>
         
          </div>
