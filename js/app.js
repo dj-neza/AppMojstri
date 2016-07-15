@@ -1,21 +1,21 @@
 var main = function() {
     $('#calendar').fullCalendar({
         header: {
-			left: 'title',
-			center: 'agendaDay,agendaWeek,month',
-			right: 'prev,next today'
-		},
-		editable: true,
-		selectable: true,
-			
+            left: 'title',
+            center: 'agendaDay,agendaWeek,month',
+            right: 'prev,next today'
+        },
+        editable: true,
+        selectable: true,
+           
         weekends: false, // will hide Saturdays and Sundays
         defaultView: 'agendaWeek',
         slotDuration: '00:20:00',
         minTime: '07:00:00',
         maxTime: '19:00:00',
-        
+       
         axisFormat: 'h:mm',
-		columnFormat: {
+        columnFormat: {
             month: 'ddd',    // Mon
             week: 'ddd d', // Mon 7
             day: 'dddd M/d',  // Monday 9/7
@@ -26,8 +26,8 @@ var main = function() {
             week: "MMMM yyyy", // September 2009
             day: 'MMMM yyyy' // Tuesday, Sep 8, 2009
         },
-		allDaySlot: false,
-		
+        allDaySlot: false,
+       
         eventSources: [
         // delavnik
         {
@@ -43,7 +43,7 @@ var main = function() {
                     start  : '2016-07-12T07:00:00',
                     end    : '2016-07-12T14:00:00',
                     allDay: false
-                    
+                   
                 },
                 {
                     title  : '',
@@ -60,7 +60,7 @@ var main = function() {
             ],
             color: '#5bc0de',
             textColor: '#103d47'
-            
+           
         },
         // dopust
         {
@@ -89,7 +89,7 @@ var main = function() {
                     start  : '2016-07-11T07:50:00',
                     end    : '2016-07-11T08:20:00',
                     allDay: false
-                    
+                   
                 },
                 {
                     title  : 'Sestanek',
@@ -138,7 +138,7 @@ var main = function() {
                     start  : '2016-07-13T14:50:00',
                     end    : '2016-07-13T15:20:00',
                     allDay: false
-                    
+                   
                 },
                 {
                     title  : 'Sestanek',
@@ -170,11 +170,17 @@ var main = function() {
         }
         ]
     });
-
+ 
     prikaz_marocil(narocila);
     
+    $('#zd_zdravnik').on('change', function() {
+       $('#narocilnice2').show(500);
+       $('#koledar2').show(500);
+    })
+   
+   
     // za design pacient.php
-    
+   
     // selectanje razpolozljivega termina
     $(".termin").on("click", function() {
         $('#razpolozljivi-termini').find('div').each(function(){
@@ -182,7 +188,7 @@ var main = function() {
         });
         $(this).addClass("izbran-termin");
     });
-    
+   
     // selectanje ure pregleda
     $(".ura").on("click", function() {
         if ($(this).hasClass("izbrana-ura")) {
@@ -190,9 +196,9 @@ var main = function() {
         } else {
             $(this).addClass("izbrana-ura");
         }
-        
+       
     });
-    
+   
     // selectanje zeljenega datuma
     $(".datum").on("click", function() {
         if ($(this).hasClass("izbran-datum")) {
@@ -204,7 +210,7 @@ var main = function() {
             $(this).addClass("izbran-datum");
         }
     });
-    
+   
     // filter
     $(".dodatne-moznosti").on("click", function() {
         if ($(".filter").hasClass("dont-display")) {
@@ -215,43 +221,62 @@ var main = function() {
             $(".dodatne-moznosti").html('Prikaži dodatne možnosti iskanja termina<span class="presledek"></span> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>');
         }
     });
-    
-
-    var zdravniki = []; // tukaj morajo biti zdravniki kot objekti s svojimi id-ji, id-ji ustanov kjer delajo, imeni...
-
+   
+ 
+    var zdravniki = [
+        {
+            idUstanova: '1',
+            naziv: 'Bojan Bojanov, specialist splošne medicine'
+        }, 
+        {
+            idUstanova: '1',
+            naziv: 'Janez Novak, specialist splošne medicine'
+        }
+        ]; // tukaj morajo biti zdravniki kot objekti s svojimi id-ji, id-ji ustanov kjer delajo, imeni...
+ 
     // val od optionov od selecta za izbrat ustanovo mora biti id ustanove
-    
+   
     $('#zd').change(function() {
         var value = $(this).find(':selected').val();
         $('#zd_zdravnik').empty();
         for (var i = 0; i < zdravniki.length; i++) {
             if (zdravniki[i].idUstanova == value) {
-                var naziv; // to nekak sestavis iz imena, priimka
-                $('#zd_zdravnik').append("<option val='" + zdravniki[i].idZdravnik + "'>" + naziv + "</option>");
+                
+                $('#zd_zdravnik').append("<option val='" + zdravniki[i].idZdravnik + "'>" + zdravniki[i].naziv + "</option>");
             }
         }
     });
-    
+   
     $(".gumbic").on("click", function() {
         var idGumba = "#" + $(this).attr("id");
         $(idGumba).css("display", "none");
     });
-    
-
+   
+ 
 };
-
+ 
 $(document).ready(main);
-
+ 
 
 var narocila = [
+    {
+        ime: 'Miha',
+        priimek: 'Kovač',
+        mail: 'bolan.pacient@gmail.com',
+        razlog: 'Pozdravljeni! \
+                Imam glavobol in hudo kašljam, od včeraj pa imam tudi vročino.',
+        datum: '18.07.2016',
+        ura: '15:00'
+    },
+      
     {
         ime: 'Marko',
         priimek: 'Zeman',
         mail: 'markozeman@gmail.com',
-        razlog: 'Pozdravljeni! Včeraj sem igral nogomet in grdo padel. Rad bi prišel na pregled kolena.',
+        razlog: 'Pozdravljeni! Včeraj sem igral nogomet in grdo padel. Prišel bi na pregled.',
         datum: '12.07.2016',
         ura: '15:00'
-    },    
+    },
     {
         ime: 'Patricija',
         priimek: 'Brečko',
@@ -259,26 +284,18 @@ var narocila = [
         razlog: 'Pozdravljeni, spet mi je zmanjkalo železa. Mislim, da potrebujem samo napotnico za laboratorij, da mi pregledajo kri.',
         datum: '13.07.2016',
         ura: '16:00'
-    },  
-    {
-        ime: 'Neža',
-        priimek: 'Đ',
-        mail: 'neđa@gmail.com',
-        razlog: 'Pozdravljeni! Imam vročino, boli me glava, smrkam, kašljam, kiham, ko se premikam pa čutim tudi bolečine v želodcu. Zdi se mi, da je moje stanje precej nujno, zato bi se čimprej naročila na pregled.',
-        datum: '15.07.2016',
-        ura: '17:00'
     },
     {
         ime: 'Neža',
         priimek: 'Đ',
         mail: 'neđa@gmail.com',
-        razlog: 'Res me boli!!.',
+        razlog: 'Pozdravljeni! Imam vročino, boli me glava, smrkam, kašljam, kiham, ko se premikam pa čutim tudi bolečine v želodcu.',
         datum: '15.07.2016',
         ura: '17:00'
     }
 ];
-
-
+ 
+ 
 function prikaz_marocil (narocila) {
     for (var i=0; i<narocila.length; i++) {
         var ime_priimek = narocila[i].ime + " " + narocila[i].priimek;

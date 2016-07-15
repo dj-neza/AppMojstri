@@ -114,10 +114,12 @@
 }
 
 .dodatni-gumb {
-    /*background-color: #dda299;*/
+    /*background-color: #dda299;
     color: #f76346;
     border-color: #f76346;
-    margin-left: 20px;
+    */
+    margin-right: 20px;
+    margin-top: 20px;
 }
 
 /* fullcalendar design */

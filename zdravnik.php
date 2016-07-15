@@ -1,5 +1,5 @@
 <?php
-    require_once('getdatafromdb.inc.php');
+   // require_once('getdatafromdb.inc.php');
 ?>
 
 <!DOCTYPE html>
@@ -21,37 +21,32 @@
                 <div class="col-md-4">
                 <select class="form-control input-mini drop_down" id="zd">
                     <option value="" disabled selected> Vaš zdravsteni dom </option>
-                    <option id="zd1" value="bezigrad">ZD Ljubljana - enota Bežigrad</option>
-                    <option id="zd2" value="moste">ZD Ljubljana - enota Moste-Polje</option>
-                    <option id="zd3" value="sentvid">ZD Ljubljana - enota Šentvid </option>
+                    <option id="zd1" value="1" class="change-font">ZD Ljubljana - enota Bežigrad</option>
+                    <option id="zd2" value="2" class="change-font">ZD Ljubljana - enota Moste-Polje</option>
                   </select>
                   </div>
                 <div class="col-md-4">
-                  <select class="form-control input-mini drop_down" id="zd_zdravnik">
+                  <select class="form-control input-mini drop_down" id="zd_zdravnik" >
                     <option value="" disabled selected> Zdravnik </option>
-                    <option id="zdr1" value="bezigrad1"> dr. med. Mojca Horvat </option>
-                    <option id="zdr2" value="bezigrad2"> dr. med. Janez Novak </option>
-                    <option id="zdr3" value="sentvid1"> dr. med. Peter Merše </option>
-                    <option id="zdr4" value="sentvid2"> dr. med. Janja Zupančič </option>
-                    <option id="zdr5" value="moste1"> dr. med. Jernej Novak </option>
-                    <option id="zdr6" value="moste2"> dr. med. Ana Horvat </option>
+                    <option id="zdr1" value="bezigrad1" class="change-font"> dr. med. Bojan Bojanov </option>
+                    <option id="zdr2" value="bezigrad2" class="change-font"> dr. med. Janez Novak </option>
                   </select>
                   </div>
             </div>
         </div>
           
-        <div class="container">
+        <div class="container" id="narocilnice2" style="display: none;">
             
           <div class="panel-group" id="narocilnice"></div>
         
         </div>
         
-        <div class="container odmik">
+        <div class="container odmik" id="koledar2" style="display: none;">
             
-            <button type="button" class="btn btn-default pull-right dodatni-gumb">Dodaj odsotnost</button>
-            <button type="button" class="btn btn-default pull-right dodatni-gumb">Spremeni delavnik</button>
+            <button type="button" class="btn btn-default pull-right odmik dodatni-gumb">Dodaj odsotnost</button>
+            <button type="button" class="btn btn-default pull-right odmik">Spremeni delavnik</button>
         
-            <div id="wrap" class="panel">
+            <div id="wrap" class="panel odmik">
             
                 <div id='calendar' class="koledar-zdravnik"></div>
             
